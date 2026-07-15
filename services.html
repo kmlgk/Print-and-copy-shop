@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>All Services · Stackly</title>
-<meta name="description" content="Browse every Stackly print & copy shop service — documents, business cards, banners, photo prints, binding, merchandise, large-format posters and invitations. Instant online quotes." />
+<title>All Services · PaperCraft</title>
+<meta name="description" content="Browse every PaperCraft print & copy shop service — documents, business cards, banners, photo prints, binding, merchandise, large-format posters and invitations. Instant online quotes." />
 <meta name="theme-color" content="#567660" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23567660'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,9 +34,9 @@
 </script>
 <script>
   (function () {
-    var theme = localStorage.getItem("stackly-theme");
+    var theme = localStorage.getItem("papercraft-theme");
     if (theme === "dark") document.documentElement.classList.add("dark");
-    var dir = localStorage.getItem("stackly-dir");
+    var dir = localStorage.getItem("papercraft-dir");
     if (dir === "rtl") { document.documentElement.setAttribute("dir", "rtl"); document.documentElement.setAttribute("lang", "ar"); }
   })();
 </script>
@@ -54,10 +54,8 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-20 items-center justify-between">
       <a href="index.html" class="flex items-center gap-2.5 shrink-0">
-        <span class="flex h-10 w-10 items-center justify-center rounded-xl gradient-bg shadow-soft">
-          <i class="fa-solid fa-print text-white text-lg"></i>
-        </span>
-        <span class="font-display text-xl font-extrabold tracking-tight text-stone-900 dark:text-white">Stackly<span class="text-primary-600">.</span></span>
+        <img src="assets/images/logo.svg" alt="PaperCraft logo" class="h-10 w-10 rounded-xl shadow-soft" />
+        <span class="font-display text-xl font-extrabold tracking-tight text-stone-900 dark:text-white">PaperCraft<span class="text-primary-600">.</span></span>
       </a>
 
       <nav class="hidden lg:flex items-center gap-1">
@@ -440,8 +438,8 @@
     <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12">
       <div class="lg:col-span-4">
         <a href="index.html" class="flex items-center gap-2.5">
-          <span class="flex h-10 w-10 items-center justify-center rounded-xl gradient-bg shadow-soft"><i class="fa-solid fa-print text-white text-lg"></i></span>
-          <span class="font-display text-xl font-extrabold text-white">Stackly<span class="text-primary-400">.</span></span>
+          <img src="assets/images/logo.svg" alt="PaperCraft logo" class="h-10 w-10 rounded-xl shadow-soft" />
+          <span class="font-display text-xl font-extrabold text-white">PaperCraft<span class="text-primary-400">.</span></span>
         </a>
         <p class="mt-5 text-sm leading-relaxed text-stone-400 max-w-xs">Your neighborhood print &amp; copy shop — now online. Documents, banners, business cards and photo prints, ready in hours, not days.</p>
         <div class="mt-6 flex items-center gap-3">
@@ -481,12 +479,12 @@
         <p data-form-feedback class="hidden mt-2 text-xs text-emerald-400"><i class="fa-solid fa-circle-check"></i> Thanks! Check your inbox to confirm.</p>
         <ul class="mt-5 space-y-2 text-sm text-stone-400">
           <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-primary-400"></i> +1 (555) 204-7788</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-primary-400"></i> hello@stackly-print.com</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-primary-400"></i> hello@papercraft-print.com</li>
         </ul>
       </div>
     </div>
     <div class="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-      <p class="text-xs text-stone-500">© <span id="year">2026</span> Stackly Print &amp; Copy Co. All rights reserved. Crafted for ThemeForest &amp; client projects.</p>
+      <p class="text-xs text-stone-500">© <span id="year">2026</span> PaperCraft Print &amp; Copy Co. All rights reserved. Crafted for ThemeForest &amp; client projects.</p>
       <div class="flex items-center gap-5 text-xs text-stone-500">
         <a href="#" class="hover:text-white transition">Privacy Policy</a>
         <a href="#" class="hover:text-white transition">Terms of Service</a>

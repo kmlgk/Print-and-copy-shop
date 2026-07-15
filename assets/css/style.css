@@ -1,5 +1,5 @@
 /* =========================================================
-   Stackly — Print & Copy Shop Template
+   PaperCraft — Print & Copy Shop Template
    Palette: "Sage & Sand" — warm, premium, low-glare
    Custom stylesheet (layered on top of Tailwind CDN utilities)
    ========================================================= */
@@ -290,3 +290,33 @@ h1, h2, h3, h4, h5, h6, .font-display {
 /* ---------- Selection color ---------- */
 ::selection { background: #D2E0CC; color: #2E3F33; }
 .dark ::selection { background: #445F4C; color: #F5F8F4; }
+
+/* =========================================================
+   GSAP / Lenis animation layer (additive — safe alongside AOS)
+   Pages that load gsap + animations.js reveal [data-aos] via
+   GSAP instead of AOS; pages without it keep AOS's own reveal.
+   ========================================================= */
+
+/* Hidden-until-revealed state, shared by AOS and GSAP alike. */
+[data-aos] { opacity: 0; }
+
+/* prefers-reduced-motion / OS-level reduce-motion: never hide content,
+   never wait on a scroll trigger that may not fire the same way. */
+.reduce-motion [data-aos] { opacity: 1 !important; transform: none !important; }
+.reduce-motion #preloader { display: none !important; }
+
+/* Magnetic buttons are driven by GSAP quickTo when animations.js is present —
+   drop the CSS transition so it doesn't fight the JS-driven transform. */
+.gsap-ready .btn-shine { transition: none; }
+
+/* Pointer-following 3D tilt needs a perspective anchor on the card itself. */
+.tilt-hover { transform-style: preserve-3d; }
+
+/* Full-bleed exit/enter veil used for page transitions (created by animations.js). */
+#page-veil {
+  position: fixed; inset: 0; z-index: 9998;
+  background: #FBF7F0;
+  transform: translateY(101%);
+  pointer-events: none;
+}
+.dark #page-veil { background: #0c0a09; }

@@ -1,6 +1,23 @@
 <!-- =========================================================
-     STACKLY — shared end-of-body scripts
+     PAPERCRAFT — shared end-of-body scripts
      ASSET_PATH = "" for root pages, "../" for dashboard/admin pages
+
+     Two reveal engines are supported, pick ONE per page:
+
+     A) AOS (default, used by most pages) — pair with
+        aos.css in partials/head.html.
+          <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+     B) GSAP + ScrollTrigger + Lenis (premium animation layer:
+        smooth scroll, hero timeline, parallax, tilt, page
+        transitions) — remove aos.css from head.html on that page
+        and use this block instead of (A):
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+          ... then load main.js, then:
+          <script src="{{ASSET_PATH}}assets/js/animations.js"></script>
+        See index.html / home-2.html for a working example.
      ========================================================= -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="{{ASSET_PATH}}assets/js/main.js"></script>

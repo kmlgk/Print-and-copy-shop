@@ -1,5 +1,5 @@
 /* =========================================================
-   Stackly — Print & Copy Shop Template
+   PaperCraft — Print & Copy Shop Template
    Shared front-end behaviour
    ========================================================= */
 
@@ -8,7 +8,7 @@
 
   /* ---------------- Theme (dark / light) ---------------- */
   const root = document.documentElement;
-  const THEME_KEY = "stackly-theme";
+  const THEME_KEY = "papercraft-theme";
 
   function applyTheme(theme) {
     if (theme === "dark") {
@@ -20,7 +20,7 @@
     document.querySelectorAll("[data-theme-toggle] .icon-moon").forEach(el => el.classList.toggle("hidden", theme === "dark"));
   }
 
-  window.__stacklySetTheme = function (theme) {
+  window.__papercraftSetTheme = function (theme) {
     localStorage.setItem(THEME_KEY, theme);
     applyTheme(theme);
   };
@@ -31,12 +31,12 @@
     document.querySelectorAll("[data-theme-toggle]").forEach(btn => {
       btn.addEventListener("click", () => {
         const next = root.classList.contains("dark") ? "light" : "dark";
-        window.__stacklySetTheme(next);
+        window.__papercraftSetTheme(next);
       });
     });
 
     /* ---------------- RTL toggle ---------------- */
-    const DIR_KEY = "stackly-dir";
+    const DIR_KEY = "papercraft-dir";
     function applyDir(dir) {
       root.setAttribute("dir", dir);
       root.setAttribute("lang", dir === "rtl" ? "ar" : "en");

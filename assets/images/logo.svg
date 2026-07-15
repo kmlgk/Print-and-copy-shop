@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="PaperCraft — print, copy &amp; stationery logo">
+  <defs>
+    <linearGradient id="pc-bg" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#445F4C" />
+      <stop offset="50%" stop-color="#567660" />
+      <stop offset="100%" stop-color="#6B8F71" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background badge -->
+  <rect width="100" height="100" rx="22" fill="url(#pc-bg)" />
+
+  <!-- Back sheet (suggests a duplicate / copy) -->
+  <rect x="28" y="23" width="34" height="40" rx="3" fill="#ffffff" opacity="0.28" transform="rotate(-8 45 43)" />
+
+  <!-- Front sheet with folded (dog-ear) corner -->
+  <path d="M34 18 H58 L66 26 V56 H34 Z" fill="#ffffff" />
+  <path d="M58 18 L66 26 H58 Z" fill="#C9DAC2" />
+
+  <!-- Text lines on the sheet -->
+  <rect x="40" y="33" width="18" height="3.4" rx="1.7" fill="#445F4C" />
+  <rect x="40" y="40.5" width="22" height="3.4" rx="1.7" fill="#567660" opacity="0.85" />
+  <rect x="40" y="48" width="13" height="3.4" rx="1.7" fill="#DD8E5C" />
+
+  <!-- Printer body -->
+  <rect x="22" y="56" width="56" height="23" rx="6" fill="#ffffff" />
+  <!-- Feed slot -->
+  <rect x="30" y="54" width="40" height="4.5" rx="2.25" fill="#2E3F33" />
+  <!-- Status light / ink accent -->
+  <circle cx="64.5" cy="67.5" r="3.4" fill="#DD8E5C" />
+  <!-- Output tray -->
+  <rect x="30" y="75" width="40" height="3.4" rx="1.7" fill="#ffffff" opacity="0.55" />
+</svg>
