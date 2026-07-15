@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>New Print Job | Stackly Customer Portal</title>
+<meta name="description" content="Upload your file, choose paper size, color mode, binding and delivery method, and get an instant live price estimate for your print job." />
+<meta name="theme-color" content="#567660" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23567660'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        fontFamily: { sans: ["Inter", "Cairo", "sans-serif"], display: ["Plus Jakarta Sans", "Cairo", "sans-serif"] },
+        colors: {
+          primary: { 50:"#F5F8F4",100:"#E8EFE5",200:"#D2E0CC",300:"#B2C9A9",400:"#8FAE85",500:"#6B8F71",600:"#567660",700:"#445F4C",800:"#384D3E",900:"#2E3F33",950:"#18221C" },
+          accent: { 50:"#FDF6F1",100:"#FBEBE0",200:"#F6D3BB",300:"#F0B98F",400:"#E8A87C",500:"#DD8E5C",600:"#C67348",700:"#A25B38",800:"#82492F",900:"#6A3C29",950:"#391E14" },
+          sand: { 50:"#FEFDFB",100:"#FBF7F0",200:"#F4EBDC",300:"#E9DCC5" }
+        },
+        boxShadow: { soft: "0 10px 34px -14px rgba(43, 36, 28, 0.22)", card: "0 4px 24px -6px rgba(43, 36, 28, 0.10)" },
+        borderRadius: { "4xl": "2rem" }
+      }
+    }
+  };
+</script>
+<script>
+  (function () {
+    var theme = localStorage.getItem("stackly-theme");
+    if (theme === "dark") document.documentElement.classList.add("dark");
+    var dir = localStorage.getItem("stackly-dir");
+    if (dir === "rtl") { document.documentElement.setAttribute("dir", "rtl"); document.documentElement.setAttribute("lang", "ar"); }
+  })();
+</script>
+<link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="bg-sand-100 dark:bg-stone-950 text-stone-700 dark:text-stone-300 antialiased">
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-ring"></div>
+</div>
+
+<div id="sidebar-overlay" class="hidden fixed inset-0 z-40 bg-stone-900/50 lg:hidden"></div>
+
+<!-- =========================== SIDEBAR =========================== -->
+<aside id="app-sidebar" class="fixed inset-y-0 start-0 z-50 w-72 -translate-x-full lg:translate-x-0 transition-transform duration-300 bg-white dark:bg-stone-900 border-e border-stone-100 dark:border-stone-800 flex flex-col">
+  <div class="h-20 flex items-center gap-2.5 px-6 border-b border-stone-100 dark:border-stone-800 shrink-0">
+    <a href="../index.html" class="flex items-center gap-2.5">
+      <span class="flex h-10 w-10 items-center justify-center rounded-xl gradient-bg shadow-soft">
+        <i class="fa-solid fa-print text-white text-lg"></i>
+      </span>
+      <span class="font-display text-xl font-extrabold tracking-tight text-stone-900 dark:text-white">Stackly<span class="text-primary-600">.</span></span>
+    </a>
+  </div>
+
+  <nav class="flex-1 overflow-y-auto px-4 py-6 space-y-1">
+    <p class="px-4 pb-2 text-[11px] font-bold uppercase tracking-widest text-stone-400">Menu</p>
+    <a href="index.html" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-stone-600 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800 transition">
+      <i class="fa-solid fa-gauge w-5 text-center"></i> Dashboard
+    </a>
+    <a href="upload.html" aria-current="page" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold bg-primary-50 text-primary-600 dark:bg-stone-800 dark:text-primary-400">
+      <i class="fa-solid fa-cloud-arrow-up w-5 text-center"></i> New Print Job
+    </a>
+    <a href="orders.html" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-stone-600 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800 transition">
+      <i class="fa-solid fa-boxes-stacked w-5 text-center"></i> My Orders
+    </a>
+    <a href="history.html" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-stone-600 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800 transition">
+      <i class="fa-solid fa-clock-rotate-left w-5 text-center"></i> Order History
+    </a>
+    <div class="my-4 border-t border-stone-100 dark:border-stone-800"></div>
+    <p class="px-4 pb-2 text-[11px] font-bold uppercase tracking-widest text-stone-400">Account</p>
+    <a href="#" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-stone-600 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800 transition">
+      <i class="fa-solid fa-gear w-5 text-center"></i> Settings
+    </a>
+    <a href="#" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-stone-600 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800 transition">
+      <i class="fa-solid fa-circle-question w-5 text-center"></i> Support
+    </a>
+  </nav>
+
+  <div class="p-4 border-t border-stone-100 dark:border-stone-800 space-y-1 shrink-0">
+    <a href="../index.html" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-stone-600 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800 transition">
+      <i class="fa-solid fa-arrow-left-long w-5 text-center"></i> Back to website
+    </a>
+    <a href="../login.html" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-accent-600 hover:bg-accent-50 dark:hover:bg-stone-800 transition">
+      <i class="fa-solid fa-right-from-bracket w-5 text-center"></i> Log out
+    </a>
+  </div>
+</aside>
+
+<div class="lg:ps-72">
+  <!-- =========================== TOP BAR =========================== -->
+  <header class="sticky top-0 z-30 flex h-20 items-center gap-4 border-b border-stone-100 dark:border-stone-800 bg-white/80 dark:bg-stone-900/80 backdrop-blur px-4 sm:px-6 lg:px-8">
+    <button id="sidebar-toggle" class="lg:hidden flex h-10 w-10 items-center justify-center rounded-full text-stone-600 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <h1 class="font-display text-lg sm:text-xl font-extrabold text-stone-900 dark:text-white">New Print Job</h1>
+
+    <div class="ms-auto flex items-center gap-1.5 sm:gap-2">
+      <button data-dir-toggle title="العربية / RTL" class="hidden sm:flex h-10 w-10 items-center justify-center rounded-full text-stone-500 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+        <i class="fa-solid fa-language"></i>
+      </button>
+      <button data-theme-toggle title="Toggle theme" class="flex h-10 w-10 items-center justify-center rounded-full text-stone-500 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+        <i class="fa-solid fa-sun icon-sun hidden"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+
+      <div class="relative">
+        <button data-dropdown="#notifPanel" title="Notifications" class="relative flex h-10 w-10 items-center justify-center rounded-full text-stone-500 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+          <i class="fa-solid fa-bell"></i>
+          <span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-accent-500"></span>
+        </button>
+        <div id="notifPanel" class="hidden absolute end-0 mt-2 w-80 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 shadow-card p-2 z-50">
+          <p class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-stone-400">Notifications</p>
+          <a href="orders.html" class="flex gap-3 rounded-xl px-3 py-2.5 hover:bg-stone-50 dark:hover:bg-stone-800">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-50 dark:bg-primary-950 text-primary-600"><i class="fa-solid fa-print text-sm"></i></span>
+            <span><span class="block text-sm font-semibold text-stone-800 dark:text-stone-100">Order #ST-48291 is now printing</span><span class="block text-xs text-stone-400">10 minutes ago</span></span>
+          </a>
+          <a href="orders.html" class="flex gap-3 rounded-xl px-3 py-2.5 hover:bg-stone-50 dark:hover:bg-stone-800">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-600"><i class="fa-solid fa-box-open text-sm"></i></span>
+            <span><span class="block text-sm font-semibold text-stone-800 dark:text-stone-100">Order #ST-48260 is ready for pickup</span><span class="block text-xs text-stone-400">2 hours ago</span></span>
+          </a>
+          <a href="#" class="flex gap-3 rounded-xl px-3 py-2.5 hover:bg-stone-50 dark:hover:bg-stone-800">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-50 dark:bg-accent-950 text-accent-600"><i class="fa-solid fa-tag text-sm"></i></span>
+            <span><span class="block text-sm font-semibold text-stone-800 dark:text-stone-100">20% off banners this week</span><span class="block text-xs text-stone-400">1 day ago</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <button data-dropdown="#userPanel" class="flex items-center gap-2 rounded-full py-1 pe-3 ps-1 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+          <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=80&q=80" alt="Sarah Whitfield avatar" class="h-8 w-8 rounded-full object-cover" />
+          <span class="hidden sm:block text-sm font-semibold text-stone-700 dark:text-stone-200">Sarah Whitfield</span>
+          <i class="fa-solid fa-chevron-down text-[10px] text-stone-400 hidden sm:block"></i>
+        </button>
+        <div id="userPanel" class="hidden absolute end-0 mt-2 w-56 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 shadow-card p-2 z-50">
+          <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800"><i class="fa-solid fa-user w-4 text-center"></i> Profile</a>
+          <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800"><i class="fa-solid fa-gear w-4 text-center"></i> Settings</a>
+          <div class="my-1 border-t border-stone-100 dark:border-stone-800"></div>
+          <a href="../login.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-accent-600 hover:bg-accent-50 dark:hover:bg-stone-800"><i class="fa-solid fa-right-from-bracket w-4 text-center"></i> Log out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================== MAIN CONTENT =========================== -->
+  <main class="px-4 sm:px-6 lg:px-8 py-8 max-w-7xl mx-auto">
+
+    <div data-aos="fade-up">
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-white">Submit a new print job</h2>
+      <p class="mt-1 text-sm text-stone-500 dark:text-stone-400">Upload your files, choose your options, and see your price update live.</p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="mt-8 flex items-center gap-2 sm:gap-4" data-aos="fade-up">
+      <div class="flex items-center gap-3">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full gradient-bg text-white text-sm font-bold">1</span>
+        <span class="hidden sm:block text-sm font-semibold text-stone-900 dark:text-white">Upload</span>
+      </div>
+      <div class="h-0.5 flex-1 step-line"></div>
+      <div class="flex items-center gap-3">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full gradient-bg text-white text-sm font-bold">2</span>
+        <span class="hidden sm:block text-sm font-semibold text-stone-900 dark:text-white">Options</span>
+      </div>
+      <div class="h-0.5 flex-1 step-line"></div>
+      <div class="flex items-center gap-3">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-stone-200 dark:border-stone-700 text-stone-400 text-sm font-bold">3</span>
+        <span class="hidden sm:block text-sm font-semibold text-stone-400">Review</span>
+      </div>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <!-- LEFT: form -->
+      <div class="lg:col-span-2 space-y-8">
+
+        <!-- Step 1: Upload -->
+        <section class="rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-6 sm:p-8" data-aos="fade-up">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-50 dark:bg-primary-950 text-primary-600 text-sm font-bold">1</span>
+            <h3 class="font-display text-lg font-bold text-stone-900 dark:text-white">Upload your files</h3>
+          </div>
+          <p class="mt-2 text-sm text-stone-500 dark:text-stone-400">PDF, DOCX, JPG or PNG — up to 200MB per file.</p>
+
+          <div data-dropzone class="dropzone mt-5 rounded-2xl px-6 py-12 text-center cursor-pointer">
+            <input type="file" multiple class="hidden" />
+            <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 dark:bg-primary-950 text-primary-600 text-xl"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+            <p class="mt-4 text-sm font-semibold text-stone-700 dark:text-stone-200">Drag &amp; drop files here, or click to browse</p>
+            <p class="mt-1 text-xs text-stone-400">Supports PDF, DOCX, JPG, PNG</p>
+          </div>
+
+          <ul id="uploadedFilesList" data-file-list="#uploadedFilesList" class="mt-4 space-y-2"></ul>
+        </section>
+
+        <!-- Step 2: Options -->
+        <section class="rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-6 sm:p-8" data-aos="fade-up">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-50 dark:bg-primary-950 text-primary-600 text-sm font-bold">2</span>
+            <h3 class="font-display text-lg font-bold text-stone-900 dark:text-white">Choose your print options</h3>
+          </div>
+
+          <!-- Paper size -->
+          <div class="mt-6">
+            <p class="text-sm font-semibold text-stone-800 dark:text-stone-100">Paper size</p>
+            <div class="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <label class="option-chip">
+                <input type="radio" name="paper-size" data-price="0.10" class="sr-only" checked>
+                <span class="block rounded-xl border-2 border-stone-200 dark:border-stone-700 px-4 py-3 text-sm font-semibold text-center cursor-pointer">Letter (8.5x11)</span>
+              </label>
+              <label class="option-chip">
+                <input type="radio" name="paper-size" data-price="0.11" class="sr-only">
+                <span class="block rounded-xl border-2 border-stone-200 dark:border-stone-700 px-4 py-3 text-sm font-semibold text-center cursor-pointer">A4</span>
+              </label>
+              <label class="option-chip">
+                <input type="radio" name="paper-size" data-price="0.13" class="sr-only">
+                <span class="block rounded-xl border-2 border-stone-200 dark:border-stone-700 px-4 py-3 text-sm font-semibold text-center cursor-pointer">Legal (8.5x14)</span>
+              </label>
+              <label class="option-chip">
+                <input type="radio" name="paper-size" data-price="0.22" class="sr-only">
+                <span class="block rounded-xl border-2 border-stone-200 dark:border-stone-700 px-4 py-3 text-sm font-semibold text-center cursor-pointer">Tabloid (11x17)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Color mode -->
+          <div class="mt-6">
+            <p class="text-sm font-semibold text-stone-800 dark:text-stone-100">Color mode</p>
+            <div class="mt-3 grid grid-cols-2 gap-3 max-w-sm">
+              <label class="option-chip">
+                <input type="radio" name="color-mode" data-price="0.08" class="sr-only" checked>
+                <span class="block rounded-xl border-2 border-stone-200 dark:border-stone-700 px-4 py-3 text-sm font-semibold text-center cursor-pointer"><i class="fa-solid fa-circle-half-stroke mr-1.5"></i> B&amp;W</span>
+              </label>
+              <label class="option-chip">
+                <input type="radio" name="color-mode" data-price="0.35" class="sr-only">
+                <span class="block rounded-xl border-2 border-stone-200 dark:border-stone-700 px-4 py-3 text-sm font-semibold text-center cursor-pointer"><i class="fa-solid fa-palette mr-1.5"></i> Color</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Copies + Binding -->
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="copies-input" class="text-sm font-semibold text-stone-800 dark:text-stone-100">Number of copies</label>
+              <input type="number" id="copies-input" min="1" value="1" class="mt-3 w-full rounded-xl border-2 border-stone-200 dark:border-stone-700 bg-transparent px-4 py-3 text-sm font-semibold text-stone-800 dark:text-stone-100 focus:border-primary-500 outline-none" />
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-stone-800 dark:text-stone-100">Binding</p>
+              <select class="mt-3 hidden"></select>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <label class="option-chip">
+                <input type="radio" name="binding" data-price="0" class="sr-only" checked>
+                <span class="block rounded-xl border-2 border-stone-200 dark:border-stone-700 px-4 py-3 text-sm font-semibold text-center cursor-pointer">None</span>
+              </label>
+              <label class="option-chip">
+                <input type="radio" name="binding" data-price="3.50" class="sr-only">
+                <span class="block rounded-xl border-2 border-stone-200 dark:border-stone-700 px-4 py-3 text-sm font-semibold text-center cursor-pointer">Spiral</span>
+              </label>
+              <label class="option-chip">
+                <input type="radio" name="binding" data-price="2.50" class="sr-only">
+                <span class="block rounded-xl border-2 border-stone-200 dark:border-stone-700 px-4 py-3 text-sm font-semibold text-center cursor-pointer">Comb</span>
+              </label>
+              <label class="option-chip">
+                <input type="radio" name="binding" data-price="6" class="sr-only">
+                <span class="block rounded-xl border-2 border-stone-200 dark:border-stone-700 px-4 py-3 text-sm font-semibold text-center cursor-pointer">Perfect</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Special instructions -->
+          <div class="mt-6">
+            <label for="instructions" class="text-sm font-semibold text-stone-800 dark:text-stone-100">Special instructions <span class="font-normal text-stone-400">(optional)</span></label>
+            <textarea id="instructions" rows="4" placeholder="e.g. Please staple top-left corner, double-sided, rush order..." class="mt-3 w-full rounded-xl border-2 border-stone-200 dark:border-stone-700 bg-transparent px-4 py-3 text-sm text-stone-700 dark:text-stone-200 focus:border-primary-500 outline-none resize-none"></textarea>
+          </div>
+        </section>
+
+        <!-- Step 3: Delivery -->
+        <section class="rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-6 sm:p-8" data-aos="fade-up">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-50 dark:bg-primary-950 text-primary-600 text-sm font-bold">3</span>
+            <h3 class="font-display text-lg font-bold text-stone-900 dark:text-white">Delivery method</h3>
+          </div>
+
+          <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <label class="option-chip">
+              <input type="radio" name="delivery-method" class="sr-only" checked>
+              <span class="flex items-start gap-4 rounded-2xl border-2 border-stone-200 dark:border-stone-700 px-5 py-5 cursor-pointer">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 dark:bg-primary-950 text-primary-600"><i class="fa-solid fa-store"></i></span>
+                <span class="text-left">
+                  <span class="block text-sm font-bold text-stone-900 dark:text-white">In-Store Pickup</span>
+                  <span class="block mt-1 text-xs text-stone-500 dark:text-stone-400">Free — collect from our downtown location once ready.</span>
+                </span>
+              </span>
+            </label>
+            <label class="option-chip">
+              <input type="radio" name="delivery-method" class="sr-only">
+              <span class="flex items-start gap-4 rounded-2xl border-2 border-stone-200 dark:border-stone-700 px-5 py-5 cursor-pointer">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-50 dark:bg-accent-950 text-accent-600"><i class="fa-solid fa-truck-fast"></i></span>
+                <span class="text-left">
+                  <span class="block text-sm font-bold text-stone-900 dark:text-white">Local Delivery</span>
+                  <span class="block mt-1 text-xs text-stone-500 dark:text-stone-400">$6.00 — delivered within 10 miles, free over $50.</span>
+                </span>
+              </span>
+            </label>
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT: order summary (sticky) -->
+      <div class="lg:col-span-1">
+        <div class="sticky top-28 rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-6 sm:p-7" data-aos="fade-up">
+          <h3 class="font-display text-lg font-bold text-stone-900 dark:text-white">Order Summary</h3>
+
+          <div class="mt-5 space-y-3 text-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-stone-500 dark:text-stone-400">Files</span>
+              <span class="font-semibold text-stone-800 dark:text-stone-100">See uploaded list</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-stone-500 dark:text-stone-400">Paper &amp; color</span>
+              <span class="font-semibold text-stone-800 dark:text-stone-100">Per selection</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-stone-500 dark:text-stone-400">Binding</span>
+              <span class="font-semibold text-stone-800 dark:text-stone-100">Per selection</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-stone-500 dark:text-stone-400">Delivery</span>
+              <span class="font-semibold text-stone-800 dark:text-stone-100">In-Store / Local</span>
+            </div>
+          </div>
+
+          <div class="mt-6 border-t border-stone-100 dark:border-stone-800 pt-5 flex items-center justify-between">
+            <span class="text-sm font-semibold text-stone-800 dark:text-stone-100">Estimated Total</span>
+            <span id="price-estimate" class="font-display text-3xl font-extrabold text-primary-600">$0.18</span>
+          </div>
+          <p class="mt-1 text-[11px] text-stone-400">Updates live as you change options. Final price confirmed at pickup.</p>
+
+          <a href="orders.html" class="btn-shine mt-6 flex items-center justify-center gap-2 rounded-full gradient-bg px-6 py-4 text-sm font-semibold text-white shadow-soft hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <i class="fa-solid fa-paper-plane"></i> Submit Print Job
+          </a>
+
+          <div class="mt-5 flex items-start gap-2.5 text-xs text-stone-400">
+            <i class="fa-solid fa-shield-halved mt-0.5"></i>
+            <span>Your files are encrypted in transit and auto-purged 90 days after pickup.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

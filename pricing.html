@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pricing · Stackly</title>
+<meta name="description" content="Transparent Stackly print & copy shop pricing — compare Pay As You Go, Starter, Business and Enterprise plans, browse the full per-service rate card, and find answers to common billing questions." />
+<meta name="theme-color" content="#567660" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23567660'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        fontFamily: { sans: ["Inter", "Cairo", "sans-serif"], display: ["Plus Jakarta Sans", "Cairo", "sans-serif"] },
+        colors: {
+          primary: { 50:"#F5F8F4",100:"#E8EFE5",200:"#D2E0CC",300:"#B2C9A9",400:"#8FAE85",500:"#6B8F71",600:"#567660",700:"#445F4C",800:"#384D3E",900:"#2E3F33",950:"#18221C" },
+          accent: { 50:"#FDF6F1",100:"#FBEBE0",200:"#F6D3BB",300:"#F0B98F",400:"#E8A87C",500:"#DD8E5C",600:"#C67348",700:"#A25B38",800:"#82492F",900:"#6A3C29",950:"#391E14" },
+          sand: { 50:"#FEFDFB",100:"#FBF7F0",200:"#F4EBDC",300:"#E9DCC5" }
+        },
+        boxShadow: { soft: "0 10px 34px -14px rgba(43, 36, 28, 0.22)", card: "0 4px 24px -6px rgba(43, 36, 28, 0.10)" },
+        borderRadius: { "4xl": "2rem" }
+      }
+    }
+  };
+</script>
+<script>
+  (function () {
+    var theme = localStorage.getItem("stackly-theme");
+    if (theme === "dark") document.documentElement.classList.add("dark");
+    var dir = localStorage.getItem("stackly-dir");
+    if (dir === "rtl") { document.documentElement.setAttribute("dir", "rtl"); document.documentElement.setAttribute("lang", "ar"); }
+  })();
+</script>
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-sand-50 dark:bg-stone-950 text-stone-700 dark:text-stone-300 antialiased">
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-ring"></div>
+</div>
+
+<!-- =========================== HEADER =========================== -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-20 items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+        <span class="flex h-10 w-10 items-center justify-center rounded-xl gradient-bg shadow-soft">
+          <i class="fa-solid fa-print text-white text-lg"></i>
+        </span>
+        <span class="font-display text-xl font-extrabold tracking-tight text-stone-900 dark:text-white">Stackly<span class="text-primary-600">.</span></span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1">
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Home <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-56 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="index.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-house-chimney w-4 text-center"></i> Home — General Services</a>
+            <a href="home-2.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-bolt w-4 text-center"></i> Home — On-Demand Print</a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Services <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-60 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="services.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-grip w-4 text-center"></i> All Services</a>
+            <a href="service-details.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-file-lines w-4 text-center"></i> Service Details</a>
+            <a href="pricing.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 dark:bg-stone-800"><i class="fa-solid fa-tags w-4 text-center"></i> Pricing</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Blog <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-56 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="blog.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-newspaper w-4 text-center"></i> Blog List</a>
+            <a href="blog-details.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-align-left w-4 text-center"></i> Blog Details</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Pages <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-56 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="dashboard/index.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-gauge w-4 text-center"></i> Customer Dashboard</a>
+            <a href="admin/index.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-user-shield w-4 text-center"></i> Admin Dashboard</a>
+            <a href="login.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-right-to-bracket w-4 text-center"></i> Login</a>
+            <a href="register.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-user-plus w-4 text-center"></i> Register</a>
+            <a href="coming-soon.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-hourglass-half w-4 text-center"></i> Coming Soon</a>
+            <a href="404.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-triangle-exclamation w-4 text-center"></i> 404 Error</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-link px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-1.5">
+        <button data-dir-toggle title="العربية / RTL" class="hidden sm:flex h-10 w-10 items-center justify-center rounded-full text-stone-500 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+          <i class="fa-solid fa-language"></i>
+        </button>
+        <button data-theme-toggle title="Toggle theme" class="flex h-10 w-10 items-center justify-center rounded-full text-stone-500 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+          <i class="fa-solid fa-sun icon-sun hidden"></i>
+          <i class="fa-solid fa-moon icon-moon"></i>
+        </button>
+        <a href="login.html" class="hidden md:inline-flex px-4 py-2.5 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 transition">Login</a>
+        <a href="dashboard/upload.html" class="btn-shine hidden sm:inline-flex items-center gap-2 rounded-full gradient-bg px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <i class="fa-solid fa-cloud-arrow-up"></i> Upload &amp; Print
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden flex h-10 w-10 items-center justify-center rounded-full text-stone-600 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800">
+          <i class="fa-solid fa-bars icon-open"></i>
+          <i class="fa-solid fa-xmark icon-close hidden"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 max-h-[80vh] overflow-y-auto">
+    <div class="px-4 py-4 space-y-1">
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Home <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="index.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Home — General Services</a>
+          <a href="home-2.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Home — On-Demand Print</a>
+        </div>
+      </div>
+      <a href="about.html" class="block px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">About</a>
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Services <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="services.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">All Services</a>
+          <a href="service-details.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Service Details</a>
+          <a href="pricing.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Pricing</a>
+        </div>
+      </div>
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Blog <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="blog.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Blog List</a>
+          <a href="blog-details.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Blog Details</a>
+        </div>
+      </div>
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Pages <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="dashboard/index.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Customer Dashboard</a>
+          <a href="admin/index.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Admin Dashboard</a>
+          <a href="login.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Login</a>
+          <a href="register.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Register</a>
+          <a href="coming-soon.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Coming Soon</a>
+          <a href="404.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">404 Error</a>
+        </div>
+      </div>
+      <a href="contact.html" class="block px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Contact</a>
+      <div class="flex gap-2 pt-3">
+        <a href="login.html" class="flex-1 text-center rounded-full border border-stone-200 dark:border-stone-700 px-4 py-2.5 text-sm font-semibold text-stone-700 dark:text-stone-200">Login</a>
+        <a href="dashboard/upload.html" class="flex-1 text-center rounded-full gradient-bg px-4 py-2.5 text-sm font-semibold text-white">Upload &amp; Print</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- =========================== HERO / BREADCRUMB =========================== -->
+<section class="relative overflow-hidden pt-40 pb-20 lg:pt-48 lg:pb-24">
+  <div class="absolute inset-0 bg-gradient-to-b from-primary-50 via-sand-50 to-sand-50 dark:from-stone-900 dark:via-stone-950 dark:to-stone-950"></div>
+  <div class="absolute top-10 -right-10 h-72 w-72 blob bg-accent-400 animate-float-slow"></div>
+  <div class="absolute bottom-0 -left-10 h-80 w-80 blob bg-primary-400 animate-float"></div>
+  <div class="absolute inset-0 bg-dots opacity-40 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,black,transparent)]"></div>
+
+  <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+    <div class="flex items-center justify-center gap-2 text-xs font-semibold text-stone-500 dark:text-stone-400">
+      <a href="index.html" class="hover:text-primary-600 transition">Home</a>
+      <i class="fa-solid fa-chevron-right rtl:rotate-180 text-[10px]"></i>
+      <span class="text-primary-600">Pricing</span>
+    </div>
+    <span class="mt-6 inline-flex items-center gap-2 rounded-full bg-accent-50 dark:bg-accent-950 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent-700 dark:text-accent-300">
+      <i class="fa-solid fa-tags"></i> Pricing
+    </span>
+    <h1 class="mt-5 font-display text-4xl font-extrabold leading-tight tracking-tight text-stone-900 dark:text-white sm:text-5xl">
+      Transparent pricing, <span class="gradient-text">zero surprises</span>
+    </h1>
+    <p class="mt-5 max-w-2xl mx-auto text-lg text-stone-600 dark:text-stone-400">
+      Pay per job whenever you need us, or subscribe for monthly print credit, priority turnaround and team-friendly perks. Every rate below is exactly what you'll see at checkout.
+    </p>
+  </div>
+</section>
+
+<!-- =========================== BILLING TOGGLE + PLANS =========================== -->
+<section class="pb-24 lg:pb-32">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="flex items-center justify-center gap-4" data-aos="fade-up">
+      <span data-billing-label="monthly" class="text-sm font-bold text-primary-600 transition">Monthly</span>
+      <label for="billing-toggle" class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="billing-toggle" class="peer sr-only" />
+        <div class="switch-track h-8 w-14 rounded-full bg-stone-200 dark:bg-stone-700 peer-checked:bg-primary-600 transition-colors"></div>
+        <span class="switch-thumb absolute left-1 h-6 w-6 rounded-full bg-white shadow-sm peer-checked:translate-x-6"></span>
+      </label>
+      <span data-billing-label="yearly" class="text-sm font-semibold text-stone-500 dark:text-stone-400 transition">
+        Yearly <span class="text-emerald-500 font-bold">(save 20%)</span>
+      </span>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-4 lg:items-center">
+
+      <!-- Pay As You Go -->
+      <div class="card-hover rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-8" data-aos="fade-up">
+        <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-500 dark:text-stone-300"><i class="fa-solid fa-coins"></i></span>
+        <h3 class="mt-5 font-display text-lg font-bold text-stone-900 dark:text-white">Pay As You Go</h3>
+        <p class="mt-2 text-sm text-stone-500 dark:text-stone-400">For occasional, one-off print jobs</p>
+        <p class="mt-6 font-display text-4xl font-extrabold text-stone-900 dark:text-white">
+          <span data-price-monthly="$0" data-price-yearly="$0">$0</span><span data-period class="text-base font-medium text-stone-400">/mo</span>
+        </p>
+        <a href="register.html" class="mt-8 block rounded-full border-2 border-stone-200 dark:border-stone-700 py-3 text-center text-sm font-semibold hover:border-primary-400 hover:text-primary-600 transition">Get Started Free</a>
+        <ul class="mt-8 space-y-3 text-sm text-stone-600 dark:text-stone-400">
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Pay only per print job</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Standard 48-hour turnaround</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Access to every print service</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Order tracking dashboard</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Email order notifications</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Free in-store pickup</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> File storage for 30 days</li>
+          <li class="flex gap-2 text-stone-400 dark:text-stone-600"><i class="fa-solid fa-xmark mt-0.5"></i> No monthly print credit</li>
+        </ul>
+      </div>
+
+      <!-- Starter -->
+      <div class="card-hover rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-8" data-aos="fade-up" data-aos-delay="100">
+        <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 dark:bg-primary-950 text-primary-600"><i class="fa-solid fa-seedling"></i></span>
+        <h3 class="mt-5 font-display text-lg font-bold text-stone-900 dark:text-white">Starter</h3>
+        <p class="mt-2 text-sm text-stone-500 dark:text-stone-400">For freelancers &amp; small teams</p>
+        <p class="mt-6 font-display text-4xl font-extrabold text-stone-900 dark:text-white">
+          <span data-price-monthly="$19" data-price-yearly="$182">$19</span><span data-period class="text-base font-medium text-stone-400">/mo</span>
+        </p>
+        <a href="register.html" class="mt-8 block rounded-full border-2 border-stone-200 dark:border-stone-700 py-3 text-center text-sm font-semibold hover:border-primary-400 hover:text-primary-600 transition">Choose Starter</a>
+        <ul class="mt-8 space-y-3 text-sm text-stone-600 dark:text-stone-400">
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Everything in Pay As You Go</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> $25 monthly print credit</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Priority 36-hour turnaround</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> 5% off every order</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Up to 5 saved reorder templates</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Email &amp; live chat support</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> File storage for 60 days</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Free local delivery over $35</li>
+        </ul>
+      </div>
+
+      <!-- Business — Most Popular -->
+      <div class="relative rounded-3xl gradient-bg p-8 pt-10 text-white shadow-2xl lg:-translate-y-6 lg:scale-105" data-aos="fade-up" data-aos-delay="200">
+        <span class="absolute -top-4 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 whitespace-nowrap rounded-full bg-accent-500 px-4 py-1.5 text-xs font-bold uppercase tracking-wide shadow-soft">
+          <i class="fa-solid fa-star"></i> Most Popular
+        </span>
+        <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 backdrop-blur"><i class="fa-solid fa-building"></i></span>
+        <h3 class="mt-5 font-display text-xl font-bold">Business</h3>
+        <p class="mt-2 text-sm text-primary-100">For growing businesses &amp; shops</p>
+        <p class="mt-6 font-display text-5xl font-extrabold">
+          <span data-price-monthly="$49" data-price-yearly="$470">$49</span><span data-period class="text-base font-medium text-primary-200">/mo</span>
+        </p>
+        <a href="register.html" class="btn-shine mt-8 block rounded-full bg-white py-3.5 text-center text-sm font-bold text-primary-700 hover:bg-primary-50 transition">Choose Business</a>
+        <ul class="mt-8 space-y-3 text-sm text-primary-50">
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-white mt-0.5"></i> Everything in Starter</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-white mt-0.5"></i> $75 monthly print credit</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-white mt-0.5"></i> Priority 24-hour turnaround</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-white mt-0.5"></i> 12% off every order</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-white mt-0.5"></i> Unlimited saved reorder templates</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-white mt-0.5"></i> Free local delivery, no minimum</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-white mt-0.5"></i> Up to 5 team member accounts</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-white mt-0.5"></i> Dedicated order manager</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-white mt-0.5"></i> Priority phone support</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-white mt-0.5"></i> File storage for 90 days</li>
+        </ul>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="card-hover rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-8" data-aos="fade-up" data-aos-delay="300">
+        <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-50 dark:bg-accent-950 text-accent-600"><i class="fa-solid fa-industry"></i></span>
+        <h3 class="mt-5 font-display text-lg font-bold text-stone-900 dark:text-white">Enterprise</h3>
+        <p class="mt-2 text-sm text-stone-500 dark:text-stone-400">For agencies, franchises &amp; multi-location</p>
+        <p class="mt-6 font-display text-4xl font-extrabold text-stone-900 dark:text-white">Custom</p>
+        <a href="contact.html" class="mt-8 block rounded-full border-2 border-stone-200 dark:border-stone-700 py-3 text-center text-sm font-semibold hover:border-primary-400 hover:text-primary-600 transition">Contact Sales</a>
+        <ul class="mt-8 space-y-3 text-sm text-stone-600 dark:text-stone-400">
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Everything in Business</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Custom volume-based pricing</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Dedicated account manager</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Multi-location support</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Custom API integration</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Net-30 business invoicing</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> SLA-backed turnaround guarantee</li>
+          <li class="flex gap-2"><i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> Unlimited team accounts</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="mt-10 text-center text-sm text-stone-500 dark:text-stone-400" data-aos="fade-up">
+      All plans include secure, encrypted file uploads and access to the full customer dashboard. <a href="contact.html" class="text-primary-600 font-semibold link-underline">Need a custom quote?</a>
+    </p>
+  </div>
+</section>
+
+<!-- =========================== PER-SERVICE RATE CARD =========================== -->
+<section class="py-24 lg:py-32 bg-sand-100 dark:bg-stone-900/40">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:items-start">
+      <div data-aos="fade-up">
+        <span class="inline-flex items-center gap-2 rounded-full bg-primary-50 dark:bg-primary-950 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-700 dark:text-primary-300">
+          <i class="fa-solid fa-receipt"></i> Rate card
+        </span>
+        <h2 class="mt-5 font-display text-3xl font-extrabold text-stone-900 dark:text-white">Per-service pricing</h2>
+        <p class="mt-4 text-stone-500 dark:text-stone-400">No plan? No problem. Every job is priced by the unit below — the exact rate you'll see in your live quote before you upload a single file.</p>
+        <div class="mt-6 rounded-2xl bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 p-5 shadow-card">
+          <p class="text-xs font-semibold text-stone-400 uppercase tracking-wide">Rush note</p>
+          <p class="mt-2 text-sm text-stone-600 dark:text-stone-400">Same-day rush pricing applies to orders placed before 12 PM local time. Starter &amp; Business subscribers skip rush fees within their plan turnaround window.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 overflow-x-auto rounded-3xl border border-stone-200 dark:border-stone-800 shadow-card" data-aos="fade-up" data-aos-delay="100">
+        <table class="w-full min-w-[560px] text-sm border-collapse bg-white dark:bg-stone-900">
+          <thead>
+            <tr class="bg-stone-900 dark:bg-stone-950 text-white text-left">
+              <th class="px-6 py-4 font-display font-bold">Service</th>
+              <th class="px-6 py-4 font-display font-bold">Unit</th>
+              <th class="px-6 py-4 font-display font-bold">Standard</th>
+              <th class="px-6 py-4 font-display font-bold bg-primary-700">Same-Day Rush</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-100 dark:divide-stone-800">
+            <tr class="table-row">
+              <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Document Printing — B&amp;W</td>
+              <td class="px-6 py-4 text-stone-500 dark:text-stone-400">per page</td>
+              <td class="px-6 py-4 text-stone-700 dark:text-stone-300">$0.08</td>
+              <td class="px-6 py-4 text-primary-700 dark:text-primary-300 font-semibold">$0.14</td>
+            </tr>
+            <tr class="table-row">
+              <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Document Printing — Color</td>
+              <td class="px-6 py-4 text-stone-500 dark:text-stone-400">per page</td>
+              <td class="px-6 py-4 text-stone-700 dark:text-stone-300">$0.35</td>
+              <td class="px-6 py-4 text-primary-700 dark:text-primary-300 font-semibold">$0.55</td>
+            </tr>
+            <tr class="table-row">
+              <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Business Cards</td>
+              <td class="px-6 py-4 text-stone-500 dark:text-stone-400">per box of 250</td>
+              <td class="px-6 py-4 text-stone-700 dark:text-stone-300">$19.99</td>
+              <td class="px-6 py-4 text-primary-700 dark:text-primary-300 font-semibold">$29.99</td>
+            </tr>
+            <tr class="table-row">
+              <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Banners &amp; Signage</td>
+              <td class="px-6 py-4 text-stone-500 dark:text-stone-400">per sq ft</td>
+              <td class="px-6 py-4 text-stone-700 dark:text-stone-300">$2.50</td>
+              <td class="px-6 py-4 text-primary-700 dark:text-primary-300 font-semibold">$3.75</td>
+            </tr>
+            <tr class="table-row">
+              <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Photo Prints (4×6)</td>
+              <td class="px-6 py-4 text-stone-500 dark:text-stone-400">per print</td>
+              <td class="px-6 py-4 text-stone-700 dark:text-stone-300">$0.29</td>
+              <td class="px-6 py-4 text-primary-700 dark:text-primary-300 font-semibold">$0.49</td>
+            </tr>
+            <tr class="table-row">
+              <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Spiral Binding</td>
+              <td class="px-6 py-4 text-stone-500 dark:text-stone-400">per book</td>
+              <td class="px-6 py-4 text-stone-700 dark:text-stone-300">$3.50</td>
+              <td class="px-6 py-4 text-primary-700 dark:text-primary-300 font-semibold">$5.00</td>
+            </tr>
+            <tr class="table-row">
+              <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Lamination</td>
+              <td class="px-6 py-4 text-stone-500 dark:text-stone-400">per sheet</td>
+              <td class="px-6 py-4 text-stone-700 dark:text-stone-300">$1.25</td>
+              <td class="px-6 py-4 text-primary-700 dark:text-primary-300 font-semibold">$2.00</td>
+            </tr>
+            <tr class="table-row">
+              <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Poster / Large Format</td>
+              <td class="px-6 py-4 text-stone-500 dark:text-stone-400">per sq ft</td>
+              <td class="px-6 py-4 text-stone-700 dark:text-stone-300">$1.75</td>
+              <td class="px-6 py-4 text-primary-700 dark:text-primary-300 font-semibold">$2.60</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== PLAN COMPARISON =========================== -->
+<section class="py-24 lg:py-32">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center" data-aos="fade-up">
+      <span class="inline-flex items-center gap-2 rounded-full bg-accent-50 dark:bg-accent-950 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent-700 dark:text-accent-300">
+        <i class="fa-solid fa-scale-balanced"></i> Compare plans
+      </span>
+      <h2 class="mt-5 font-display text-3xl font-extrabold text-stone-900 dark:text-white sm:text-4xl">Every feature, side by side</h2>
+      <p class="mt-4 text-stone-500 dark:text-stone-400">A closer look at what's included so you can pick the plan that actually fits how much you print.</p>
+    </div>
+
+    <div class="mt-14 overflow-x-auto rounded-3xl border border-stone-200 dark:border-stone-800 shadow-card" data-aos="fade-up">
+      <table class="w-full min-w-[760px] text-sm border-collapse bg-white dark:bg-stone-900">
+        <thead>
+          <tr class="text-left">
+            <th class="px-6 py-5 bg-stone-900 dark:bg-stone-950 text-white font-display font-bold w-1/4">Feature</th>
+            <th class="px-6 py-5 bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-white font-display font-bold text-center">Pay As You Go</th>
+            <th class="px-6 py-5 bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-white font-display font-bold text-center">Starter</th>
+            <th class="px-6 py-5 gradient-bg text-white font-display font-bold text-center">Business</th>
+            <th class="px-6 py-5 bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-white font-display font-bold text-center">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-stone-100 dark:divide-stone-800">
+          <tr class="table-row">
+            <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Monthly print credit</td>
+            <td class="px-6 py-4 text-center text-stone-400">—</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">$25</td>
+            <td class="px-6 py-4 text-center bg-primary-50/60 dark:bg-primary-950/30 font-semibold text-primary-700 dark:text-primary-300">$75</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">Custom</td>
+          </tr>
+          <tr class="table-row">
+            <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Turnaround time</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">48 hours</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">36 hours</td>
+            <td class="px-6 py-4 text-center bg-primary-50/60 dark:bg-primary-950/30 font-semibold text-primary-700 dark:text-primary-300">24 hours</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">SLA-based</td>
+          </tr>
+          <tr class="table-row">
+            <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Order discount</td>
+            <td class="px-6 py-4 text-center text-stone-400">—</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">5%</td>
+            <td class="px-6 py-4 text-center bg-primary-50/60 dark:bg-primary-950/30 font-semibold text-primary-700 dark:text-primary-300">12%</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">Negotiated</td>
+          </tr>
+          <tr class="table-row">
+            <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Local delivery</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">From $4.99</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">Free over $35</td>
+            <td class="px-6 py-4 text-center bg-primary-50/60 dark:bg-primary-950/30 font-semibold text-primary-700 dark:text-primary-300">Always free</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">Always free</td>
+          </tr>
+          <tr class="table-row">
+            <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Saved reorder templates</td>
+            <td class="px-6 py-4 text-center text-stone-400">—</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">Up to 5</td>
+            <td class="px-6 py-4 text-center bg-primary-50/60 dark:bg-primary-950/30 font-semibold text-primary-700 dark:text-primary-300">Unlimited</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">Unlimited</td>
+          </tr>
+          <tr class="table-row">
+            <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Team member accounts</td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-minus text-stone-300 dark:text-stone-600"></i></td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-minus text-stone-300 dark:text-stone-600"></i></td>
+            <td class="px-6 py-4 text-center bg-primary-50/60 dark:bg-primary-950/30"><i class="fa-solid fa-check text-primary-600"></i> Up to 5</td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-check text-emerald-500"></i> Unlimited</td>
+          </tr>
+          <tr class="table-row">
+            <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Dedicated account manager</td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-minus text-stone-300 dark:text-stone-600"></i></td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-minus text-stone-300 dark:text-stone-600"></i></td>
+            <td class="px-6 py-4 text-center bg-primary-50/60 dark:bg-primary-950/30"><i class="fa-solid fa-check text-primary-600"></i></td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-check text-emerald-500"></i></td>
+          </tr>
+          <tr class="table-row">
+            <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">API access</td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-minus text-stone-300 dark:text-stone-600"></i></td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-minus text-stone-300 dark:text-stone-600"></i></td>
+            <td class="px-6 py-4 text-center bg-primary-50/60 dark:bg-primary-950/30"><i class="fa-solid fa-minus text-stone-300 dark:text-stone-600"></i></td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-check text-emerald-500"></i></td>
+          </tr>
+          <tr class="table-row">
+            <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Business invoicing (Net-30)</td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-minus text-stone-300 dark:text-stone-600"></i></td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-minus text-stone-300 dark:text-stone-600"></i></td>
+            <td class="px-6 py-4 text-center bg-primary-50/60 dark:bg-primary-950/30"><i class="fa-solid fa-minus text-stone-300 dark:text-stone-600"></i></td>
+            <td class="px-6 py-4 text-center"><i class="fa-solid fa-check text-emerald-500"></i></td>
+          </tr>
+          <tr class="table-row">
+            <td class="px-6 py-4 font-semibold text-stone-800 dark:text-stone-100">Support level</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">Email</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">Email + chat</td>
+            <td class="px-6 py-4 text-center bg-primary-50/60 dark:bg-primary-950/30 font-semibold text-primary-700 dark:text-primary-300">Priority phone</td>
+            <td class="px-6 py-4 text-center text-stone-600 dark:text-stone-300">White-glove</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== FAQ =========================== -->
+<section class="py-24 lg:py-32 bg-sand-100 dark:bg-stone-900/40">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
+      <div data-aos="fade-up">
+        <span class="inline-flex items-center gap-2 rounded-full bg-primary-50 dark:bg-primary-950 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-700 dark:text-primary-300">
+          <i class="fa-solid fa-circle-question"></i> Billing FAQ
+        </span>
+        <h2 class="mt-5 font-display text-3xl font-extrabold text-stone-900 dark:text-white">Questions about pricing?</h2>
+        <p class="mt-4 text-stone-500 dark:text-stone-400">Can't find what you're looking for? Our team is happy to walk you through the numbers.</p>
+        <a href="contact.html" class="mt-7 inline-flex items-center gap-2 rounded-full gradient-bg px-6 py-3.5 text-sm font-semibold text-white shadow-soft hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <i class="fa-solid fa-comments"></i> Talk to Billing Support
+        </a>
+      </div>
+
+      <div class="lg:col-span-2 space-y-4" data-faq-group data-aos="fade-up" data-aos-delay="100">
+        <div class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden">
+          <button data-faq-toggle class="flex w-full items-center justify-between px-6 py-5 text-start font-semibold text-stone-900 dark:text-white">
+            Can I switch plans or cancel anytime?
+            <i class="fa-solid fa-chevron-down chev text-sm text-stone-400 transition"></i>
+          </button>
+          <div class="hidden px-6 pb-5 text-sm text-stone-500 dark:text-stone-400">Yes. Upgrade, downgrade or cancel your subscription at any time from your dashboard billing page — there are no lock-in contracts or cancellation fees on any plan.</div>
+        </div>
+        <div class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden">
+          <button data-faq-toggle class="flex w-full items-center justify-between px-6 py-5 text-start font-semibold text-stone-900 dark:text-white">
+            Is billing prorated when I upgrade mid-cycle?
+            <i class="fa-solid fa-chevron-down chev text-sm text-stone-400 transition"></i>
+          </button>
+          <div class="hidden px-6 pb-5 text-sm text-stone-500 dark:text-stone-400">Yes. If you upgrade from Starter to Business partway through a billing period, we prorate the difference automatically and only charge you for the days remaining at the new rate.</div>
+        </div>
+        <div class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden">
+          <button data-faq-toggle class="flex w-full items-center justify-between px-6 py-5 text-start font-semibold text-stone-900 dark:text-white">
+            Do unused monthly print credits roll over?
+            <i class="fa-solid fa-chevron-down chev text-sm text-stone-400 transition"></i>
+          </button>
+          <div class="hidden px-6 pb-5 text-sm text-stone-500 dark:text-stone-400">Up to 50% of any unused monthly credit rolls over to the following month on Starter and Business plans, capped at one month's credit value. Credits do not carry over after cancellation.</div>
+        </div>
+        <div class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden">
+          <button data-faq-toggle class="flex w-full items-center justify-between px-6 py-5 text-start font-semibold text-stone-900 dark:text-white">
+            Can I get an invoice or receipt for my business?
+            <i class="fa-solid fa-chevron-down chev text-sm text-stone-400 transition"></i>
+          </button>
+          <div class="hidden px-6 pb-5 text-sm text-stone-500 dark:text-stone-400">Every order and subscription charge generates a downloadable PDF receipt in your dashboard. Enterprise customers can request consolidated monthly invoicing with Net-30 payment terms.</div>
+        </div>
+        <div class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden">
+          <button data-faq-toggle class="flex w-full items-center justify-between px-6 py-5 text-start font-semibold text-stone-900 dark:text-white">
+            What's your refund policy?
+            <i class="fa-solid fa-chevron-down chev text-sm text-stone-400 transition"></i>
+          </button>
+          <div class="hidden px-6 pb-5 text-sm text-stone-500 dark:text-stone-400">If a print job arrives damaged or doesn't match your approved specs, we'll reprint it free or refund that order within 7 days — no questions asked. Subscription fees are refundable within the first 14 days of a new plan.</div>
+        </div>
+        <div class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden">
+          <button data-faq-toggle class="flex w-full items-center justify-between px-6 py-5 text-start font-semibold text-stone-900 dark:text-white">
+            Do you offer discounts for nonprofits or bulk orders?
+            <i class="fa-solid fa-chevron-down chev text-sm text-stone-400 transition"></i>
+          </button>
+          <div class="hidden px-6 pb-5 text-sm text-stone-500 dark:text-stone-400">Registered nonprofits get 15% off any subscription plan, and any single order over 5,000 units qualifies for custom bulk pricing. Reach out to sales with your details for a quote.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== CLOSING CTA =========================== -->
+<section class="py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative overflow-hidden rounded-4xl gradient-bg-warm px-8 py-16 text-center sm:px-16" data-aos="zoom-in">
+      <div class="absolute -top-16 -right-16 h-64 w-64 blob bg-white/20 animate-float-slow"></div>
+      <div class="absolute -bottom-16 -left-16 h-64 w-64 blob bg-primary-900/30 animate-float"></div>
+      <h2 class="relative font-display text-3xl font-extrabold text-white sm:text-4xl">Still not sure which plan fits?</h2>
+      <p class="relative mt-4 text-white/85 max-w-xl mx-auto">Start free on Pay As You Go, upgrade the moment you need more — or let our team build a custom plan around your print volume.</p>
+      <div class="relative mt-9 flex flex-wrap justify-center gap-4">
+        <a href="register.html" class="btn-shine inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-primary-700 shadow-lg hover:-translate-y-0.5 transition-all"><i class="fa-solid fa-user-plus"></i> Start Free</a>
+        <a href="contact.html" class="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-7 py-4 text-sm font-semibold text-white hover:bg-white/10 transition"><i class="fa-solid fa-phone"></i> Talk to Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =========================== FOOTER =========================== -->
+<footer class="relative overflow-hidden bg-stone-950 text-stone-300">
+  <div class="absolute -top-24 -left-24 h-72 w-72 blob bg-primary-600"></div>
+  <div class="absolute -bottom-24 -right-24 h-72 w-72 blob bg-accent-600"></div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+    <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl gradient-bg shadow-soft"><i class="fa-solid fa-print text-white text-lg"></i></span>
+          <span class="font-display text-xl font-extrabold text-white">Stackly<span class="text-primary-400">.</span></span>
+        </a>
+        <p class="mt-5 text-sm leading-relaxed text-stone-400 max-w-xs">Your neighborhood print &amp; copy shop — now online. Documents, banners, business cards and photo prints, ready in hours, not days.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 hover:bg-primary-600 transition text-stone-300 hover:text-white"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 hover:bg-primary-600 transition text-stone-300 hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 hover:bg-primary-600 transition text-stone-300 hover:text-white"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 hover:bg-primary-600 transition text-stone-300 hover:text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="lg:col-span-2">
+        <h4 class="font-display text-sm font-bold text-white tracking-wide">Company</h4>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="about.html" class="link-underline text-stone-400 hover:text-white transition">About Us</a></li>
+          <li><a href="services.html" class="link-underline text-stone-400 hover:text-white transition">Services</a></li>
+          <li><a href="pricing.html" class="link-underline text-stone-400 hover:text-white transition">Pricing</a></li>
+          <li><a href="blog.html" class="link-underline text-stone-400 hover:text-white transition">Blog</a></li>
+          <li><a href="contact.html" class="link-underline text-stone-400 hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-3">
+        <h4 class="font-display text-sm font-bold text-white tracking-wide">Services</h4>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="service-details.html" class="link-underline text-stone-400 hover:text-white transition">Document Printing</a></li>
+          <li><a href="service-details.html" class="link-underline text-stone-400 hover:text-white transition">Business Cards</a></li>
+          <li><a href="service-details.html" class="link-underline text-stone-400 hover:text-white transition">Banners &amp; Signage</a></li>
+          <li><a href="service-details.html" class="link-underline text-stone-400 hover:text-white transition">Photo Printing</a></li>
+          <li><a href="service-details.html" class="link-underline text-stone-400 hover:text-white transition">Binding &amp; Finishing</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-3">
+        <h4 class="font-display text-sm font-bold text-white tracking-wide">Stay in the loop</h4>
+        <p class="mt-5 text-sm text-stone-400">Get print deals &amp; tips straight to your inbox.</p>
+        <form data-demo-form class="mt-4 relative">
+          <input type="email" required placeholder="you@email.com" class="w-full rounded-full bg-white/5 border border-white/10 py-3 pl-4 pe-12 text-sm text-white placeholder:text-stone-500 focus:outline-none focus:border-primary-500" />
+          <button type="submit" class="absolute end-1.5 top-1.5 flex h-9 w-9 items-center justify-center rounded-full gradient-bg text-white"><i class="fa-solid fa-arrow-right rtl:rotate-180"></i></button>
+        </form>
+        <p data-form-feedback class="hidden mt-2 text-xs text-emerald-400"><i class="fa-solid fa-circle-check"></i> Thanks! Check your inbox to confirm.</p>
+        <ul class="mt-5 space-y-2 text-sm text-stone-400">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-primary-400"></i> +1 (555) 204-7788</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-primary-400"></i> hello@stackly-print.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-xs text-stone-500">© <span id="year">2026</span> Stackly Print &amp; Copy Co. All rights reserved. Crafted for ThemeForest &amp; client projects.</p>
+      <div class="flex items-center gap-5 text-xs text-stone-500">
+        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition">Terms of Service</a>
+        <a href="404.html" class="hover:text-white transition">404 Page</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" class="fixed bottom-6 end-6 z-40 flex h-12 w-12 items-center justify-center rounded-full gradient-bg text-white shadow-soft opacity-0 pointer-events-none transition-all duration-300 hover:-translate-y-1">
+  <i class="fa-solid fa-arrow-up rtl:rotate-180"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  /* Page-local: swap the /mo /yr price-period suffix alongside the main.js billing toggle hook */
+  document.getElementById("billing-toggle")?.addEventListener("change", function () {
+    var yearly = this.checked;
+    document.querySelectorAll("[data-period]").forEach(function (el) {
+      el.textContent = yearly ? "/yr" : "/mo";
+    });
+  });
+</script>
+</body>
+</html>

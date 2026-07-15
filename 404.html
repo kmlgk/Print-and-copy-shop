@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>404 — Page Not Found | Stackly</title>
+<meta name="description" content="The page you're looking for doesn't exist or has moved. Head back to the Stackly homepage or reach out to our support team for help." />
+<meta name="theme-color" content="#567660" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23567660'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        fontFamily: { sans: ["Inter", "Cairo", "sans-serif"], display: ["Plus Jakarta Sans", "Cairo", "sans-serif"] },
+        colors: {
+          primary: { 50:"#F5F8F4",100:"#E8EFE5",200:"#D2E0CC",300:"#B2C9A9",400:"#8FAE85",500:"#6B8F71",600:"#567660",700:"#445F4C",800:"#384D3E",900:"#2E3F33",950:"#18221C" },
+          accent: { 50:"#FDF6F1",100:"#FBEBE0",200:"#F6D3BB",300:"#F0B98F",400:"#E8A87C",500:"#DD8E5C",600:"#C67348",700:"#A25B38",800:"#82492F",900:"#6A3C29",950:"#391E14" },
+          sand: { 50:"#FEFDFB",100:"#FBF7F0",200:"#F4EBDC",300:"#E9DCC5" }
+        },
+        boxShadow: { soft: "0 10px 34px -14px rgba(43, 36, 28, 0.22)", card: "0 4px 24px -6px rgba(43, 36, 28, 0.10)" },
+        borderRadius: { "4xl": "2rem" }
+      }
+    }
+  };
+</script>
+<script>
+  (function () {
+    var theme = localStorage.getItem("stackly-theme");
+    if (theme === "dark") document.documentElement.classList.add("dark");
+    var dir = localStorage.getItem("stackly-dir");
+    if (dir === "rtl") { document.documentElement.setAttribute("dir", "rtl"); document.documentElement.setAttribute("lang", "ar"); }
+  })();
+</script>
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-sand-50 dark:bg-stone-950 text-stone-700 dark:text-stone-300 antialiased">
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-ring"></div>
+</div>
+
+<!-- =========================== HEADER =========================== -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-20 items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+        <span class="flex h-10 w-10 items-center justify-center rounded-xl gradient-bg shadow-soft">
+          <i class="fa-solid fa-print text-white text-lg"></i>
+        </span>
+        <span class="font-display text-xl font-extrabold tracking-tight text-stone-900 dark:text-white">Stackly<span class="text-primary-600">.</span></span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1">
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Home <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-56 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="index.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 dark:bg-stone-800"><i class="fa-solid fa-house-chimney w-4 text-center"></i> Home — General Services</a>
+            <a href="home-2.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-bolt w-4 text-center"></i> Home — On-Demand Print</a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Services <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-60 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="services.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-grip w-4 text-center"></i> All Services</a>
+            <a href="service-details.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-file-lines w-4 text-center"></i> Service Details</a>
+            <a href="pricing.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-tags w-4 text-center"></i> Pricing</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Blog <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-56 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="blog.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-newspaper w-4 text-center"></i> Blog List</a>
+            <a href="blog-details.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-align-left w-4 text-center"></i> Blog Details</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Pages <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-56 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="dashboard/index.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-gauge w-4 text-center"></i> Customer Dashboard</a>
+            <a href="admin/index.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-user-shield w-4 text-center"></i> Admin Dashboard</a>
+            <a href="login.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-right-to-bracket w-4 text-center"></i> Login</a>
+            <a href="register.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-user-plus w-4 text-center"></i> Register</a>
+            <a href="coming-soon.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-hourglass-half w-4 text-center"></i> Coming Soon</a>
+            <a href="404.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 dark:bg-stone-800"><i class="fa-solid fa-triangle-exclamation w-4 text-center"></i> 404 Error</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-link px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-1.5">
+        <button data-dir-toggle title="العربية / RTL" class="hidden sm:flex h-10 w-10 items-center justify-center rounded-full text-stone-500 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+          <i class="fa-solid fa-language"></i>
+        </button>
+        <button data-theme-toggle title="Toggle theme" class="flex h-10 w-10 items-center justify-center rounded-full text-stone-500 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+          <i class="fa-solid fa-sun icon-sun hidden"></i>
+          <i class="fa-solid fa-moon icon-moon"></i>
+        </button>
+        <a href="login.html" class="hidden md:inline-flex px-4 py-2.5 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 transition">Login</a>
+        <a href="dashboard/upload.html" class="btn-shine hidden sm:inline-flex items-center gap-2 rounded-full gradient-bg px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <i class="fa-solid fa-cloud-arrow-up"></i> Upload &amp; Print
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden flex h-10 w-10 items-center justify-center rounded-full text-stone-600 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800">
+          <i class="fa-solid fa-bars icon-open"></i>
+          <i class="fa-solid fa-xmark icon-close hidden"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 max-h-[80vh] overflow-y-auto">
+    <div class="px-4 py-4 space-y-1">
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Home <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="index.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Home — General Services</a>
+          <a href="home-2.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Home — On-Demand Print</a>
+        </div>
+      </div>
+      <a href="about.html" class="block px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">About</a>
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Services <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="services.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">All Services</a>
+          <a href="service-details.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Service Details</a>
+          <a href="pricing.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Pricing</a>
+        </div>
+      </div>
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Blog <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="blog.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Blog List</a>
+          <a href="blog-details.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Blog Details</a>
+        </div>
+      </div>
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Pages <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="dashboard/index.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Customer Dashboard</a>
+          <a href="admin/index.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Admin Dashboard</a>
+          <a href="login.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Login</a>
+          <a href="register.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Register</a>
+          <a href="coming-soon.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Coming Soon</a>
+          <a href="404.html" class="block px-3 py-2 text-sm font-semibold text-primary-600">404 Error</a>
+        </div>
+      </div>
+      <a href="contact.html" class="block px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Contact</a>
+      <div class="flex gap-2 pt-3">
+        <a href="login.html" class="flex-1 text-center rounded-full border border-stone-200 dark:border-stone-700 px-4 py-2.5 text-sm font-semibold text-stone-700 dark:text-stone-200">Login</a>
+        <a href="dashboard/upload.html" class="flex-1 text-center rounded-full gradient-bg px-4 py-2.5 text-sm font-semibold text-white">Upload &amp; Print</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- =========================== 404 =========================== -->
+<section class="relative overflow-hidden min-h-screen flex items-center pt-32 pb-20">
+  <div class="absolute inset-0 bg-gradient-to-b from-primary-50 via-sand-50 to-sand-50 dark:from-stone-900 dark:via-stone-950 dark:to-stone-950"></div>
+  <div class="absolute top-16 right-10 h-80 w-80 blob bg-accent-400 animate-float-slow"></div>
+  <div class="absolute inset-0 bg-dots opacity-40 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,black,transparent)]"></div>
+
+  <div class="relative mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+    <div class="mx-auto flex h-36 w-36 items-center justify-center rounded-full bg-white dark:bg-stone-900 shadow-card animate-float">
+      <i class="fa-solid fa-file-circle-exclamation text-5xl text-primary-500"></i>
+    </div>
+    <p class="mt-8 font-display text-7xl sm:text-8xl font-extrabold gradient-text">404</p>
+    <h1 class="mt-4 font-display text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-white">Oops! This page got lost in the printer</h1>
+    <p class="mt-4 text-stone-500 dark:text-stone-400 max-w-md mx-auto">The page you're looking for was misfed, jammed, or never made it off the press. Let's get you back on track.</p>
+
+    <form action="#" class="mt-8 mx-auto max-w-md relative">
+      <label for="notfound-search" class="sr-only">Search Stackly</label>
+      <input type="search" id="notfound-search" placeholder="Search services, orders, pages..." class="w-full rounded-full border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 px-5 py-3.5 pe-12 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
+      <button type="submit" aria-label="Search" class="absolute end-1.5 top-1.5 flex h-9 w-9 items-center justify-center rounded-full gradient-bg text-white"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+
+    <div class="mt-9 flex flex-wrap items-center justify-center gap-4">
+      <a href="index.html" class="btn-shine inline-flex items-center gap-2 rounded-full gradient-bg px-7 py-3.5 text-sm font-semibold text-white shadow-soft hover:shadow-lg hover:-translate-y-0.5 transition-all"><i class="fa-solid fa-house"></i> Back to Homepage</a>
+      <a href="contact.html" class="inline-flex items-center gap-2 rounded-full border-2 border-stone-200 dark:border-stone-700 px-7 py-3.5 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:border-primary-400 hover:text-primary-600 transition"><i class="fa-solid fa-headset"></i> Contact Support</a>
+    </div>
+
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
+      <a href="services.html" class="font-semibold text-stone-500 dark:text-stone-400 hover:text-primary-600 link-underline">Services</a>
+      <a href="pricing.html" class="font-semibold text-stone-500 dark:text-stone-400 hover:text-primary-600 link-underline">Pricing</a>
+      <a href="blog.html" class="font-semibold text-stone-500 dark:text-stone-400 hover:text-primary-600 link-underline">Blog</a>
+      <a href="dashboard/index.html" class="font-semibold text-stone-500 dark:text-stone-400 hover:text-primary-600 link-underline">Dashboard</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =========================== MINIMAL FOOTER =========================== -->
+<footer class="border-t border-stone-100 dark:border-stone-800">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-500 dark:text-stone-400">
+    <p>© <span id="year">2026</span> Stackly Print &amp; Copy Co. All rights reserved.</p>
+    <div class="flex items-center gap-5">
+      <a href="index.html" class="hover:text-primary-600 transition">Home</a>
+      <a href="contact.html" class="hover:text-primary-600 transition">Contact</a>
+      <a href="#" class="hover:text-primary-600 transition">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" class="fixed bottom-6 end-6 z-40 flex h-12 w-12 items-center justify-center rounded-full gradient-bg text-white shadow-soft opacity-0 pointer-events-none transition-all duration-300 hover:-translate-y-1">
+  <i class="fa-solid fa-arrow-up rtl:rotate-180"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

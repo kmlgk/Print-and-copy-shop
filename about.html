@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us · Stackly</title>
+<meta name="description" content="Meet the Stackly team — learn our story, our mission and values, and why thousands of businesses trust us with their printing since 2014." />
+<meta name="theme-color" content="#567660" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23567660'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        fontFamily: { sans: ["Inter", "Cairo", "sans-serif"], display: ["Plus Jakarta Sans", "Cairo", "sans-serif"] },
+        colors: {
+          primary: { 50:"#F5F8F4",100:"#E8EFE5",200:"#D2E0CC",300:"#B2C9A9",400:"#8FAE85",500:"#6B8F71",600:"#567660",700:"#445F4C",800:"#384D3E",900:"#2E3F33",950:"#18221C" },
+          accent: { 50:"#FDF6F1",100:"#FBEBE0",200:"#F6D3BB",300:"#F0B98F",400:"#E8A87C",500:"#DD8E5C",600:"#C67348",700:"#A25B38",800:"#82492F",900:"#6A3C29",950:"#391E14" },
+          sand: { 50:"#FEFDFB",100:"#FBF7F0",200:"#F4EBDC",300:"#E9DCC5" }
+        },
+        boxShadow: { soft: "0 10px 34px -14px rgba(43, 36, 28, 0.22)", card: "0 4px 24px -6px rgba(43, 36, 28, 0.10)" },
+        borderRadius: { "4xl": "2rem" }
+      }
+    }
+  };
+</script>
+<script>
+  (function () {
+    var theme = localStorage.getItem("stackly-theme");
+    if (theme === "dark") document.documentElement.classList.add("dark");
+    var dir = localStorage.getItem("stackly-dir");
+    if (dir === "rtl") { document.documentElement.setAttribute("dir", "rtl"); document.documentElement.setAttribute("lang", "ar"); }
+  })();
+</script>
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-sand-50 dark:bg-stone-950 text-stone-700 dark:text-stone-300 antialiased">
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-ring"></div>
+</div>
+
+<!-- =========================== HEADER =========================== -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-20 items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+        <span class="flex h-10 w-10 items-center justify-center rounded-xl gradient-bg shadow-soft">
+          <i class="fa-solid fa-print text-white text-lg"></i>
+        </span>
+        <span class="font-display text-xl font-extrabold tracking-tight text-stone-900 dark:text-white">Stackly<span class="text-primary-600">.</span></span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1">
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Home <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-56 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="index.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 dark:bg-stone-800"><i class="fa-solid fa-house-chimney w-4 text-center"></i> Home — General Services</a>
+            <a href="home-2.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-bolt w-4 text-center"></i> Home — On-Demand Print</a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link active px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Services <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-60 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="services.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-grip w-4 text-center"></i> All Services</a>
+            <a href="service-details.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-file-lines w-4 text-center"></i> Service Details</a>
+            <a href="pricing.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-tags w-4 text-center"></i> Pricing</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Blog <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-56 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="blog.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-newspaper w-4 text-center"></i> Blog List</a>
+            <a href="blog-details.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-align-left w-4 text-center"></i> Blog Details</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">
+            Pages <i class="fa-solid fa-chevron-down text-[10px] mt-0.5 transition group-hover:rotate-180"></i>
+          </button>
+          <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute start-0 mt-2 w-56 rounded-2xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-2 shadow-card">
+            <a href="dashboard/index.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-gauge w-4 text-center"></i> Customer Dashboard</a>
+            <a href="admin/index.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-user-shield w-4 text-center"></i> Admin Dashboard</a>
+            <a href="login.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-right-to-bracket w-4 text-center"></i> Login</a>
+            <a href="register.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-user-plus w-4 text-center"></i> Register</a>
+            <a href="coming-soon.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-hourglass-half w-4 text-center"></i> Coming Soon</a>
+            <a href="404.html" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 dark:text-stone-300 hover:bg-primary-50 dark:hover:bg-stone-800 hover:text-primary-600"><i class="fa-solid fa-triangle-exclamation w-4 text-center"></i> 404 Error</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-link px-4 py-2 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-1.5">
+        <button data-dir-toggle title="العربية / RTL" class="hidden sm:flex h-10 w-10 items-center justify-center rounded-full text-stone-500 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+          <i class="fa-solid fa-language"></i>
+        </button>
+        <button data-theme-toggle title="Toggle theme" class="flex h-10 w-10 items-center justify-center rounded-full text-stone-500 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+          <i class="fa-solid fa-sun icon-sun hidden"></i>
+          <i class="fa-solid fa-moon icon-moon"></i>
+        </button>
+        <a href="login.html" class="hidden md:inline-flex px-4 py-2.5 text-sm font-semibold text-stone-700 dark:text-stone-200 hover:text-primary-600 transition">Login</a>
+        <a href="dashboard/upload.html" class="btn-shine hidden sm:inline-flex items-center gap-2 rounded-full gradient-bg px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <i class="fa-solid fa-cloud-arrow-up"></i> Upload &amp; Print
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden flex h-10 w-10 items-center justify-center rounded-full text-stone-600 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800">
+          <i class="fa-solid fa-bars icon-open"></i>
+          <i class="fa-solid fa-xmark icon-close hidden"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 max-h-[80vh] overflow-y-auto">
+    <div class="px-4 py-4 space-y-1">
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Home <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="index.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Home — General Services</a>
+          <a href="home-2.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Home — On-Demand Print</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link active block px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">About</a>
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Services <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="services.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">All Services</a>
+          <a href="service-details.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Service Details</a>
+          <a href="pricing.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Pricing</a>
+        </div>
+      </div>
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Blog <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="blog.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Blog List</a>
+          <a href="blog-details.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Blog Details</a>
+        </div>
+      </div>
+      <div>
+        <button data-submenu-toggle class="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Pages <i class="fa-solid fa-chevron-down chev text-xs transition"></i></button>
+        <div class="hidden pl-4 pb-2 space-y-1">
+          <a href="dashboard/index.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Customer Dashboard</a>
+          <a href="admin/index.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Admin Dashboard</a>
+          <a href="login.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Login</a>
+          <a href="register.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Register</a>
+          <a href="coming-soon.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">Coming Soon</a>
+          <a href="404.html" class="block px-3 py-2 text-sm text-stone-600 dark:text-stone-300">404 Error</a>
+        </div>
+      </div>
+      <a href="contact.html" class="block px-3 py-3 text-sm font-semibold text-stone-700 dark:text-stone-200">Contact</a>
+      <div class="flex gap-2 pt-3">
+        <a href="login.html" class="flex-1 text-center rounded-full border border-stone-200 dark:border-stone-700 px-4 py-2.5 text-sm font-semibold text-stone-700 dark:text-stone-200">Login</a>
+        <a href="dashboard/upload.html" class="flex-1 text-center rounded-full gradient-bg px-4 py-2.5 text-sm font-semibold text-white">Upload &amp; Print</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- =========================== PAGE HEADER =========================== -->
+<section class="relative overflow-hidden pt-40 pb-24 lg:pt-48 lg:pb-28">
+  <div class="absolute inset-0 bg-gradient-to-b from-primary-50 via-sand-50 to-sand-50 dark:from-stone-900 dark:via-stone-950 dark:to-stone-950"></div>
+  <div class="absolute top-10 -left-10 h-72 w-72 blob bg-primary-400 animate-float-slow"></div>
+  <div class="absolute inset-0 bg-dots opacity-40 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,black,transparent)]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <nav class="flex items-center justify-center gap-2 text-xs font-semibold text-stone-500 dark:text-stone-400" data-aos="fade-up" aria-label="Breadcrumb">
+      <a href="index.html" class="hover:text-primary-600 transition">Home</a>
+      <i class="fa-solid fa-chevron-right rtl:rotate-180 text-[10px] text-stone-300 dark:text-stone-600"></i>
+      <span class="text-primary-600">About</span>
+    </nav>
+    <div class="mx-auto mt-6 max-w-3xl text-center" data-aos="fade-up" data-aos-delay="100">
+      <h1 class="font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-stone-900 dark:text-white sm:text-5xl lg:text-6xl">
+        The <span class="gradient-text">neighborhood print shop</span><br class="hidden sm:block" /> that grew into a full-service studio.
+      </h1>
+      <p class="mt-6 text-lg text-stone-600 dark:text-stone-400">
+        Since 2014, Stackly has been turning last-minute files into finished, pickup-ready prints — now with an online dashboard that tracks every job from upload to delivery.
+      </p>
+    </div>
+
+    <div class="relative mt-16" data-aos="zoom-in" data-aos-delay="150">
+      <div class="relative rounded-4xl overflow-hidden shadow-2xl ring-1 ring-stone-900/5">
+        <img src="https://images.unsplash.com/photo-1568205612837-017257d2310a?auto=format&fit=crop&w=1600&q=80" alt="Stackly print shop office desk with documents and design proofs" class="h-[320px] sm:h-[420px] w-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent"></div>
+      </div>
+      <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full bg-white dark:bg-stone-900 px-5 py-3 shadow-card">
+        <i class="fa-solid fa-calendar-check text-accent-500"></i>
+        <span class="text-xs font-semibold text-stone-700 dark:text-stone-200">Family-run since 2014 · Now serving 6 cities</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== OUR STORY / HISTORY TIMELINE =========================== -->
+<section class="py-24 lg:py-32">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center" data-aos="fade-up">
+      <span class="inline-flex items-center gap-2 rounded-full bg-primary-50 dark:bg-primary-950 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-700 dark:text-primary-300">
+        <i class="fa-solid fa-timeline"></i> Our story
+      </span>
+      <h2 class="mt-5 font-display text-3xl font-extrabold text-stone-900 dark:text-white sm:text-4xl">From one copy counter to a full print studio</h2>
+      <p class="mt-4 text-stone-500 dark:text-stone-400">A dozen years, four expansions, and thousands of print runs later — here's how Stackly got here.</p>
+    </div>
+
+    <div class="relative mt-20 max-w-4xl mx-auto">
+      <div class="absolute left-6 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 via-primary-300 to-accent-400 sm:-translate-x-1/2"></div>
+
+      <div class="relative space-y-14">
+        <div class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-0" data-aos="fade-up">
+          <div class="sm:w-1/2 sm:pe-12 sm:text-end order-2 sm:order-1 pl-16 sm:pl-0">
+            <span class="inline-flex rounded-full bg-primary-50 dark:bg-primary-950 px-3 py-1 text-xs font-bold text-primary-700 dark:text-primary-300">2014</span>
+            <h3 class="mt-3 font-display text-lg font-bold text-stone-900 dark:text-white">A single copy counter</h3>
+            <p class="mt-2 text-sm text-stone-500 dark:text-stone-400">Stackly opened as a 400 sq ft storefront with one black &amp; white copier and a promise: no job too small, no customer kept waiting.</p>
+          </div>
+          <div class="absolute left-6 sm:left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full gradient-bg text-white text-xs shadow-soft z-10 order-1 sm:order-2"><i class="fa-solid fa-store"></i></div>
+          <div class="hidden sm:block sm:w-1/2 sm:ps-12 order-3"></div>
+        </div>
+
+        <div class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-0" data-aos="fade-up" data-aos-delay="100">
+          <div class="hidden sm:block sm:w-1/2 sm:pe-12 order-1"></div>
+          <div class="absolute left-6 sm:left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full gradient-bg text-white text-xs shadow-soft z-10 order-1 sm:order-2"><i class="fa-solid fa-print"></i></div>
+          <div class="sm:w-1/2 sm:ps-12 order-2 sm:order-3 pl-16 sm:pl-0">
+            <span class="inline-flex rounded-full bg-accent-50 dark:bg-accent-950 px-3 py-1 text-xs font-bold text-accent-700 dark:text-accent-300">2017</span>
+            <h3 class="mt-3 font-display text-lg font-bold text-stone-900 dark:text-white">Wide-format &amp; bindery added</h3>
+            <p class="mt-2 text-sm text-stone-500 dark:text-stone-400">We invested in our first large-format press and binding equipment, letting us take on banners, signage and spiral-bound reports in-house.</p>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-0" data-aos="fade-up" data-aos-delay="200">
+          <div class="sm:w-1/2 sm:pe-12 sm:text-end order-2 sm:order-1 pl-16 sm:pl-0">
+            <span class="inline-flex rounded-full bg-primary-50 dark:bg-primary-950 px-3 py-1 text-xs font-bold text-primary-700 dark:text-primary-300">2021</span>
+            <h3 class="mt-3 font-display text-lg font-bold text-stone-900 dark:text-white">Second location &amp; design studio</h3>
+            <p class="mt-2 text-sm text-stone-500 dark:text-stone-400">A growing roster of small-business clients led us to open a second shop and hire our first in-house graphic designers for logo and layout work.</p>
+          </div>
+          <div class="absolute left-6 sm:left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full gradient-bg text-white text-xs shadow-soft z-10 order-1 sm:order-2"><i class="fa-solid fa-building"></i></div>
+          <div class="hidden sm:block sm:w-1/2 sm:ps-12 order-3"></div>
+        </div>
+
+        <div class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-0" data-aos="fade-up" data-aos-delay="300">
+          <div class="hidden sm:block sm:w-1/2 sm:pe-12 order-1"></div>
+          <div class="absolute left-6 sm:left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full gradient-bg text-white text-xs shadow-soft z-10 order-1 sm:order-2"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <div class="sm:w-1/2 sm:ps-12 order-2 sm:order-3 pl-16 sm:pl-0">
+            <span class="inline-flex rounded-full bg-accent-50 dark:bg-accent-950 px-3 py-1 text-xs font-bold text-accent-700 dark:text-accent-300">2026</span>
+            <h3 class="mt-3 font-display text-lg font-bold text-stone-900 dark:text-white">Online ordering &amp; live tracking</h3>
+            <p class="mt-2 text-sm text-stone-500 dark:text-stone-400">Today, customers upload files, get instant quotes and track jobs from any device — while our six shops keep the same hands-on care we started with.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== MISSION & VALUES =========================== -->
+<section class="py-24 lg:py-32 bg-sand-100 dark:bg-stone-900/40">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center" data-aos="fade-up">
+      <span class="inline-flex items-center gap-2 rounded-full bg-accent-50 dark:bg-accent-950 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent-700 dark:text-accent-300">
+        <i class="fa-solid fa-bullseye"></i> Mission &amp; values
+      </span>
+      <h2 class="mt-5 font-display text-3xl font-extrabold text-stone-900 dark:text-white sm:text-4xl">What guides every job we run</h2>
+      <p class="mt-4 text-stone-500 dark:text-stone-400">Our mission is simple: make professional printing fast, affordable and painless for every business and individual we serve.</p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
+      <div class="card-hover relative overflow-hidden rounded-3xl gradient-bg-warm p-8 text-white lg:col-span-3 lg:row-span-2 flex flex-col justify-center" data-aos="fade-up">
+        <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 backdrop-blur text-xl"><i class="fa-solid fa-bolt"></i></span>
+        <h3 class="mt-6 font-display text-xl font-bold">Speed &amp; Reliability</h3>
+        <p class="mt-3 text-sm text-white/80">Most jobs are ready within 24 hours, and our live status tracker means you always know exactly where your order stands.</p>
+      </div>
+      <div class="card-hover rounded-3xl bg-accent-50 dark:bg-accent-950/40 border border-accent-100 dark:border-accent-900 p-7 lg:col-span-3 flex items-center gap-5" data-aos="fade-up" data-aos-delay="100">
+        <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white dark:bg-stone-900 text-accent-600 text-xl shadow-sm"><i class="fa-solid fa-award"></i></span>
+        <div>
+          <h3 class="font-display text-lg font-bold text-stone-900 dark:text-white">Print Quality</h3>
+          <p class="mt-1.5 text-sm text-stone-600 dark:text-stone-400">Color-calibrated presses and a manual quality check on every order before it leaves the shop — no smudges, no misaligned cuts.</p>
+        </div>
+      </div>
+      <div class="card-hover rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-7 lg:col-span-3 flex items-center gap-5" data-aos="fade-up" data-aos-delay="200">
+        <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary-50 dark:bg-primary-950 text-primary-600 text-xl"><i class="fa-solid fa-leaf"></i></span>
+        <div>
+          <h3 class="font-display text-lg font-bold text-stone-900 dark:text-white">Sustainability</h3>
+          <p class="mt-1.5 text-sm text-stone-500 dark:text-stone-400">FSC-certified paper stock, soy-based inks, and a recycling program that reclaims offcuts from every large-format job.</p>
+        </div>
+      </div>
+      <div class="card-hover rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 p-7 lg:col-span-6 flex flex-col sm:flex-row items-center gap-5 text-center sm:text-start" data-aos="fade-up" data-aos-delay="300">
+        <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary-50 dark:bg-primary-950 text-primary-600 text-xl"><i class="fa-solid fa-headset"></i></span>
+        <div>
+          <h3 class="font-display text-lg font-bold text-stone-900 dark:text-white">Customer-First Support</h3>
+          <p class="mt-1.5 text-sm text-stone-500 dark:text-stone-400">Real people answer the phone. If a proof isn't right, we reprint it — no arguments, no restocking fees.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== STATS BAND =========================== -->
+<section class="py-20 relative overflow-hidden bg-stone-950">
+  <div class="absolute top-0 left-1/4 h-96 w-96 blob bg-primary-700"></div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 gap-8 lg:grid-cols-4 text-center">
+      <div data-aos="fade-up">
+        <p class="font-display text-4xl font-extrabold text-white"><span data-counter="12">0</span>+</p>
+        <p class="mt-2 text-sm text-stone-400">Years in business</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="100">
+        <p class="font-display text-4xl font-extrabold text-white"><span data-counter="48">0</span>K+</p>
+        <p class="mt-2 text-sm text-stone-400">Jobs printed</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200">
+        <p class="font-display text-4xl font-extrabold text-white"><span data-counter="6">0</span></p>
+        <p class="mt-2 text-sm text-stone-400">Cities served</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="300">
+        <p class="font-display text-4xl font-extrabold text-white"><span data-counter="99.4">0</span>%</p>
+        <p class="mt-2 text-sm text-stone-400">Customer satisfaction</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== MEET THE TEAM =========================== -->
+<section class="py-24 lg:py-32">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center" data-aos="fade-up">
+      <span class="inline-flex items-center gap-2 rounded-full bg-primary-50 dark:bg-primary-950 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-700 dark:text-primary-300">
+        <i class="fa-solid fa-people-group"></i> Meet the team
+      </span>
+      <h2 class="mt-5 font-display text-3xl font-extrabold text-stone-900 dark:text-white sm:text-4xl">The people behind every print run</h2>
+      <p class="mt-4 text-stone-500 dark:text-stone-400">Small team, big presses — everyone here has ink on their hands at some point in the week.</p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <a href="#" class="card-hover group relative overflow-hidden rounded-3xl lg:col-span-2 lg:row-span-2 sm:col-span-2 min-h-[22rem]" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Portrait of Renata Ford, Founder and Master Printer at Stackly" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent"></div>
+        <div class="relative flex h-full flex-col justify-end p-7">
+          <h3 class="font-display text-xl font-bold text-white">Renata Ford</h3>
+          <p class="mt-1 text-sm text-primary-200">Founder &amp; Master Printer</p>
+          <p class="mt-3 max-w-sm text-sm text-white/80">Started Stackly at 24 with one copier and a folding table. Still runs press QC on every job personally.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 backdrop-blur text-white hover:bg-white/25 transition"><i class="fa-brands fa-linkedin-in text-xs"></i></span>
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 backdrop-blur text-white hover:bg-white/25 transition"><i class="fa-brands fa-x-twitter text-xs"></i></span>
+          </div>
+        </div>
+      </a>
+      <div class="card-hover group rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden lg:col-span-2 flex flex-col sm:flex-row" data-aos="fade-up" data-aos-delay="100">
+        <div class="overflow-hidden sm:w-36 shrink-0"><img src="https://images.unsplash.com/photo-1524293581917-878a6d017c71?auto=format&fit=crop&w=400&q=80" alt="Portrait of Idris Malik, Production Manager at Stackly" class="h-32 sm:h-full w-full object-cover transition duration-500 group-hover:scale-110" /></div>
+        <div class="p-5 flex flex-col justify-center">
+          <h3 class="font-display font-bold text-stone-900 dark:text-white">Idris Malik</h3>
+          <p class="mt-1 text-sm text-primary-600">Production Manager</p>
+          <p class="mt-2 text-xs text-stone-500 dark:text-stone-400">Keeps the presses running and the queue moving — the reason your rush job actually ships on time.</p>
+          <div class="mt-3 flex items-center gap-2">
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-stone-100 dark:bg-stone-800 text-stone-500 hover:bg-primary-600 hover:text-white transition"><i class="fa-brands fa-linkedin-in text-[10px]"></i></a>
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-stone-100 dark:bg-stone-800 text-stone-500 hover:bg-primary-600 hover:text-white transition"><i class="fa-brands fa-instagram text-[10px]"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="card-hover group rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <div class="overflow-hidden"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=500&q=80" alt="Portrait of Priya Nair, Customer Success Lead at Stackly" class="h-40 w-full object-cover transition duration-500 group-hover:scale-110" /></div>
+        <div class="p-5 text-center">
+          <h3 class="font-display font-bold text-stone-900 dark:text-white">Priya Nair</h3>
+          <p class="mt-1 text-sm text-primary-600">Customer Success Lead</p>
+          <p class="mt-3 text-xs text-stone-500 dark:text-stone-400">Answers the phone, fixes the mix-ups, and makes sure every reorder is exactly right the second time.</p>
+          <div class="mt-4 flex items-center justify-center gap-2">
+            <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-stone-100 dark:bg-stone-800 text-stone-500 hover:bg-primary-600 hover:text-white transition"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+            <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-stone-100 dark:bg-stone-800 text-stone-500 hover:bg-primary-600 hover:text-white transition"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="card-hover group rounded-3xl border border-stone-100 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+        <div class="overflow-hidden"><img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=500&q=80" alt="Portrait of Owen Castillo, Head of Design Services at Stackly" class="h-40 w-full object-cover transition duration-500 group-hover:scale-110" /></div>
+        <div class="p-5 text-center">
+          <h3 class="font-display font-bold text-stone-900 dark:text-white">Owen Castillo</h3>
+          <p class="mt-1 text-sm text-primary-600">Head of Design Services</p>
+          <p class="mt-3 text-xs text-stone-500 dark:text-stone-400">Turns rough sketches and half-finished briefs into print-ready artwork for our design-assist customers.</p>
+          <div class="mt-4 flex items-center justify-center gap-2">
+            <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-stone-100 dark:bg-stone-800 text-stone-500 hover:bg-primary-600 hover:text-white transition"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+            <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-stone-100 dark:bg-stone-800 text-stone-500 hover:bg-primary-600 hover:text-white transition"><i class="fa-brands fa-behance text-xs"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== BEHIND THE SCENES =========================== -->
+<section class="py-24 lg:py-32 bg-sand-100 dark:bg-stone-900/40">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center" data-aos="fade-up">
+      <span class="inline-flex items-center gap-2 rounded-full bg-accent-50 dark:bg-accent-950 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent-700 dark:text-accent-300">
+        <i class="fa-solid fa-industry"></i> Behind the scenes
+      </span>
+      <h2 class="mt-5 font-display text-3xl font-extrabold text-stone-900 dark:text-white sm:text-4xl">Inside the shop floor</h2>
+      <p class="mt-4 text-stone-500 dark:text-stone-400">A peek at the equipment and process that gets your job from file to finished product.</p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:auto-rows-[198px]">
+      <div class="relative overflow-hidden rounded-3xl h-80 lg:h-auto lg:col-span-2 lg:row-span-2" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1000&q=80" alt="Production floor with a professional digital press mid-run" class="h-full w-full object-cover transition duration-500 hover:scale-110" />
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/10 to-transparent flex items-end p-6">
+          <p class="text-white text-base font-semibold max-w-md">Our digital presses run color-calibration checks every morning before the first job of the day.</p>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded-3xl h-48 lg:h-auto" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?auto=format&fit=crop&w=600&q=80" alt="Large-format banner material being trimmed to size" class="h-full w-full object-cover transition duration-500 hover:scale-110" />
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/10 to-transparent flex items-end p-5">
+          <p class="text-white text-sm font-semibold">Wide-format banners are cut on a precision blade table, accurate to within a millimeter.</p>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded-3xl h-48 lg:h-auto" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=600&q=80" alt="Finished documents stacked and ready for customer pickup" class="h-full w-full object-cover transition duration-500 hover:scale-110" />
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/10 to-transparent flex items-end p-5">
+          <p class="text-white text-sm font-semibold">Every finished order is hand-checked against the original spec sheet before it hits the pickup shelf.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== TESTIMONIALS =========================== -->
+<section class="py-24 lg:py-32 bg-stone-950 relative overflow-hidden">
+  <div class="absolute top-0 left-1/4 h-96 w-96 blob bg-primary-700"></div>
+  <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+    <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-300"><i class="fa-solid fa-quote-left"></i> What people say</span>
+    <h2 class="mt-5 font-display text-3xl font-extrabold text-white sm:text-4xl">Twelve years of customers who keep coming back</h2>
+
+    <div class="mt-14 overflow-hidden" data-slider>
+      <div class="slider-track flex">
+        <div class="w-full shrink-0 px-4">
+          <i class="fa-solid fa-quote-left text-4xl text-primary-500/40"></i>
+          <p class="mt-4 text-xl font-medium text-stone-200">"We've used Stackly for every product launch since 2019. The team knows our brand guidelines by heart and our banners are always spot-on."</p>
+          <div class="mt-8 flex items-center justify-center gap-3">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&q=80" class="h-12 w-12 rounded-full object-cover" alt="Jonah Whitfield" />
+            <div class="text-start">
+              <p class="font-semibold text-white text-sm">Jonah Whitfield</p>
+              <p class="text-xs text-stone-400">Marketing Director, Civic Works</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full shrink-0 px-4">
+          <i class="fa-solid fa-quote-left text-4xl text-primary-500/40"></i>
+          <p class="mt-4 text-xl font-medium text-stone-200">"Renata's team reprinted our wedding invitations at 7am with zero fuss when we caught a typo the night before. That's the kind of shop Stackly is."</p>
+          <div class="mt-8 flex items-center justify-center gap-3">
+            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=100&q=80" class="h-12 w-12 rounded-full object-cover" alt="Sofia Marchetti" />
+            <div class="text-start">
+              <p class="font-semibold text-white text-sm">Sofia Marchetti</p>
+              <p class="text-xs text-stone-400">Local customer</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full shrink-0 px-4">
+          <i class="fa-solid fa-quote-left text-4xl text-primary-500/40"></i>
+          <p class="mt-4 text-xl font-medium text-stone-200">"Their sustainable paper line let us tell customers our packaging inserts are FSC-certified — matters a lot to our buyers, and the print quality never suffered."</p>
+          <div class="mt-8 flex items-center justify-center gap-3">
+            <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=100&q=80" class="h-12 w-12 rounded-full object-cover" alt="Grace Okonkwo" />
+            <div class="text-start">
+              <p class="font-semibold text-white text-sm">Grace Okonkwo</p>
+              <p class="text-xs text-stone-400">Co-founder, Lumen&amp;Co</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 flex items-center justify-center gap-4">
+        <button data-prev class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition"><i class="fa-solid fa-arrow-left rtl:rotate-180"></i></button>
+        <button data-dot class="h-2 w-2 rounded-full bg-white/30 transition"></button>
+        <button data-dot class="h-2 w-2 rounded-full bg-white/30 transition"></button>
+        <button data-dot class="h-2 w-2 rounded-full bg-white/30 transition"></button>
+        <button data-next class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition"><i class="fa-solid fa-arrow-right rtl:rotate-180"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== CTA =========================== -->
+<section class="py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative overflow-hidden rounded-4xl gradient-bg px-8 py-16 text-center sm:px-16" data-aos="zoom-in">
+      <div class="absolute -bottom-16 -right-16 h-64 w-64 blob bg-accent-400/40 animate-float"></div>
+      <h2 class="relative font-display text-3xl font-extrabold text-white sm:text-4xl">Ready to work with a shop that shows up?</h2>
+      <p class="relative mt-4 text-primary-100 max-w-xl mx-auto">Browse our services or upload your files now — most orders are ready within 24 hours.</p>
+      <div class="relative mt-9 flex flex-wrap justify-center gap-4">
+        <a href="services.html" class="btn-shine inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-primary-700 shadow-lg hover:-translate-y-0.5 transition-all"><i class="fa-solid fa-grip"></i> Browse Services</a>
+        <a href="dashboard/upload.html" class="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-7 py-4 text-sm font-semibold text-white hover:bg-white/10 transition"><i class="fa-solid fa-cloud-arrow-up"></i> Upload &amp; Print Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =========================== FOOTER =========================== -->
+<footer class="relative overflow-hidden bg-stone-950 text-stone-300">
+  <div class="absolute -top-24 -left-24 h-72 w-72 blob bg-primary-600"></div>
+  <div class="absolute -bottom-24 -right-24 h-72 w-72 blob bg-accent-600"></div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+    <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl gradient-bg shadow-soft"><i class="fa-solid fa-print text-white text-lg"></i></span>
+          <span class="font-display text-xl font-extrabold text-white">Stackly<span class="text-primary-400">.</span></span>
+        </a>
+        <p class="mt-5 text-sm leading-relaxed text-stone-400 max-w-xs">Your neighborhood print &amp; copy shop — now online. Documents, banners, business cards and photo prints, ready in hours, not days.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 hover:bg-primary-600 transition text-stone-300 hover:text-white"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 hover:bg-primary-600 transition text-stone-300 hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 hover:bg-primary-600 transition text-stone-300 hover:text-white"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 hover:bg-primary-600 transition text-stone-300 hover:text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="lg:col-span-2">
+        <h4 class="font-display text-sm font-bold text-white tracking-wide">Company</h4>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="about.html" class="link-underline text-stone-400 hover:text-white transition">About Us</a></li>
+          <li><a href="services.html" class="link-underline text-stone-400 hover:text-white transition">Services</a></li>
+          <li><a href="pricing.html" class="link-underline text-stone-400 hover:text-white transition">Pricing</a></li>
+          <li><a href="blog.html" class="link-underline text-stone-400 hover:text-white transition">Blog</a></li>
+          <li><a href="contact.html" class="link-underline text-stone-400 hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-3">
+        <h4 class="font-display text-sm font-bold text-white tracking-wide">Services</h4>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="service-details.html" class="link-underline text-stone-400 hover:text-white transition">Document Printing</a></li>
+          <li><a href="service-details.html" class="link-underline text-stone-400 hover:text-white transition">Business Cards</a></li>
+          <li><a href="service-details.html" class="link-underline text-stone-400 hover:text-white transition">Banners &amp; Signage</a></li>
+          <li><a href="service-details.html" class="link-underline text-stone-400 hover:text-white transition">Photo Printing</a></li>
+          <li><a href="service-details.html" class="link-underline text-stone-400 hover:text-white transition">Binding &amp; Finishing</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-3">
+        <h4 class="font-display text-sm font-bold text-white tracking-wide">Stay in the loop</h4>
+        <p class="mt-5 text-sm text-stone-400">Get print deals &amp; tips straight to your inbox.</p>
+        <form data-demo-form class="mt-4 relative">
+          <input type="email" required placeholder="you@email.com" class="w-full rounded-full bg-white/5 border border-white/10 py-3 pl-4 pe-12 text-sm text-white placeholder:text-stone-500 focus:outline-none focus:border-primary-500" />
+          <button type="submit" class="absolute end-1.5 top-1.5 flex h-9 w-9 items-center justify-center rounded-full gradient-bg text-white"><i class="fa-solid fa-arrow-right rtl:rotate-180"></i></button>
+        </form>
+        <p data-form-feedback class="hidden mt-2 text-xs text-emerald-400"><i class="fa-solid fa-circle-check"></i> Thanks! Check your inbox to confirm.</p>
+        <ul class="mt-5 space-y-2 text-sm text-stone-400">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-primary-400"></i> +1 (555) 204-7788</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-primary-400"></i> hello@stackly-print.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-xs text-stone-500">© <span id="year">2026</span> Stackly Print &amp; Copy Co. All rights reserved. Crafted for ThemeForest &amp; client projects.</p>
+      <div class="flex items-center gap-5 text-xs text-stone-500">
+        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition">Terms of Service</a>
+        <a href="404.html" class="hover:text-white transition">404 Page</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" class="fixed bottom-6 end-6 z-40 flex h-12 w-12 items-center justify-center rounded-full gradient-bg text-white shadow-soft opacity-0 pointer-events-none transition-all duration-300 hover:-translate-y-1">
+  <i class="fa-solid fa-arrow-up rtl:rotate-180"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
