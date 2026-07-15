@@ -71,11 +71,26 @@
     /* ---------------- Mobile menu ---------------- */
     const menuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuBackdrop = document.getElementById("mobile-menu-backdrop");
     if (menuBtn && mobileMenu) {
+      const setMenuOpen = (open) => {
+        mobileMenu.classList.toggle("hidden", !open);
+        mobileMenuBackdrop?.classList.toggle("hidden", !open);
+        menuBtn.querySelector(".icon-open")?.classList.toggle("hidden", open);
+        menuBtn.querySelector(".icon-close")?.classList.toggle("hidden", !open);
+        menuBtn.setAttribute("aria-expanded", String(open));
+        document.documentElement.classList.toggle("overflow-hidden", open);
+      };
+      menuBtn.setAttribute("aria-expanded", "false");
       menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        menuBtn.querySelector(".icon-open")?.classList.toggle("hidden");
-        menuBtn.querySelector(".icon-close")?.classList.toggle("hidden");
+        setMenuOpen(mobileMenu.classList.contains("hidden"));
+      });
+      mobileMenuBackdrop?.addEventListener("click", () => setMenuOpen(false));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) setMenuOpen(false);
+      });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 1024 && !mobileMenu.classList.contains("hidden")) setMenuOpen(false);
       });
     }
 
