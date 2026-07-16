@@ -11,11 +11,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Inter", "Cairo", sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, .font-display {
@@ -320,3 +323,41 @@ h1, h2, h3, h4, h5, h6, .font-display {
   pointer-events: none;
 }
 .dark #page-veil { background: #0c0a09; }
+
+/* ---------- Mobile nav: smooth open/close (no JS animation lib needed) ---------- */
+#mobile-menu {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s cubic-bezier(.22,1,.36,1), opacity 0.25s ease;
+}
+#mobile-menu.menu-open {
+  max-height: 80vh;
+  opacity: 1;
+  overflow-y: auto;
+}
+#mobile-menu-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+#mobile-menu-backdrop.menu-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Submenu accordions inside the mobile menu use the same pattern */
+[data-submenu-toggle] + div {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s cubic-bezier(.22,1,.36,1), opacity 0.2s ease;
+}
+[data-submenu-toggle] + div.submenu-open {
+  max-height: 20rem;
+  opacity: 1;
+}
+.reduce-motion #mobile-menu,
+.reduce-motion #mobile-menu-backdrop,
+.reduce-motion [data-submenu-toggle] + div {
+  transition: none;
+}

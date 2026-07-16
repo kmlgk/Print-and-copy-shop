@@ -74,23 +74,30 @@
     const mobileMenuBackdrop = document.getElementById("mobile-menu-backdrop");
     if (menuBtn && mobileMenu) {
       const setMenuOpen = (open) => {
-        mobileMenu.classList.toggle("hidden", !open);
-        mobileMenuBackdrop?.classList.toggle("hidden", !open);
+        mobileMenu.classList.toggle("menu-open", open);
+        mobileMenuBackdrop?.classList.toggle("menu-open", open);
         menuBtn.querySelector(".icon-open")?.classList.toggle("hidden", open);
         menuBtn.querySelector(".icon-close")?.classList.toggle("hidden", !open);
         menuBtn.setAttribute("aria-expanded", String(open));
         document.documentElement.classList.toggle("overflow-hidden", open);
+        if (!open) {
+          // collapse any open submenus so re-opening the menu starts fresh
+          mobileMenu.querySelectorAll("[data-submenu-toggle]").forEach(btn => {
+            btn.nextElementSibling?.classList.remove("submenu-open");
+            btn.querySelector(".chev")?.classList.remove("rotate-180");
+          });
+        }
       };
       menuBtn.setAttribute("aria-expanded", "false");
       menuBtn.addEventListener("click", () => {
-        setMenuOpen(mobileMenu.classList.contains("hidden"));
+        setMenuOpen(!mobileMenu.classList.contains("menu-open"));
       });
       mobileMenuBackdrop?.addEventListener("click", () => setMenuOpen(false));
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) setMenuOpen(false);
+        if (e.key === "Escape" && mobileMenu.classList.contains("menu-open")) setMenuOpen(false);
       });
       window.addEventListener("resize", () => {
-        if (window.innerWidth >= 1024 && !mobileMenu.classList.contains("hidden")) setMenuOpen(false);
+        if (window.innerWidth >= 1024 && mobileMenu.classList.contains("menu-open")) setMenuOpen(false);
       });
     }
 
@@ -98,7 +105,12 @@
     document.querySelectorAll("[data-submenu-toggle]").forEach(btn => {
       btn.addEventListener("click", () => {
         const panel = btn.nextElementSibling;
-        panel?.classList.toggle("hidden");
+        if (!panel) return;
+        // Force a style/layout flush before toggling so the max-height/opacity
+        // transition reliably fires on WebKit even right after the parent
+        // mobile menu's own open transition (avoids a nested-transition race).
+        void panel.offsetHeight;
+        panel.classList.toggle("submenu-open");
         btn.querySelector(".chev")?.classList.toggle("rotate-180");
       });
     });
