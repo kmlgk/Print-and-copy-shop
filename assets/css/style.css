@@ -332,9 +332,15 @@ h1, h2, h3, h4, h5, h6, .font-display {
   transition: max-height 0.35s cubic-bezier(.22,1,.36,1), opacity 0.25s ease;
 }
 #mobile-menu.menu-open {
-  max-height: 80vh;
+  /* Bound to whatever space is actually left below the h-20 (5rem) header —
+     not a flat 80vh — so short/landscape screens never push the Login /
+     Upload & Print row past the bottom of the viewport. */
+  max-height: calc(100vh - 5rem);
+  max-height: calc(100dvh - 5rem);
   opacity: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 #mobile-menu-backdrop {
   opacity: 0;
